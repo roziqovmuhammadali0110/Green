@@ -11,27 +11,26 @@ const About = () => {
           </h1>
           <div>
             <p className="font-medium text-[15px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum neque
-              labore iusto? Tempore temporibus odit cumque repudiandae nesciunt
-              ad natus impedit nam. Repudiandae cum quia incidunt saepe
-              consequuntur, officia corrupti doloribus error minima voluptas rem
-              omnis perferendis placeat voluptates aliquam ipsum molestiae neque
-              alias ducimus deserunt id fuga. Laborum deserunt doloremque
-              voluptates eveniet! Ea esse unde dicta ipsa, laboriosam delectus
-              et architecto nostrum vel! Dicta ducimus porro perspiciatis unde
-              alias explicabo nisi nesciunt voluptates, veritatis qui voluptate
-              sequi sit tempora rem ipsa ad deleniti repellat aliquam doloremque
-              aperiam ratione, temporibus nostrum similique. Error
-              necessitatibus itaque quia perferendis sunt quisquam alias harum
-              quibusdam repellendus, perspiciatis quo possimus accusamus
-              voluptatem numquam atque quas qui vitae nesciunt suscipit enim
-              repellat ullam magni blanditiis mollitia. Fugiat sequi error iure
-              incidunt id unde ex, perferendis odio asperiores quas accusamus
-              magnam dolores ut nemo. Esse quasi nemo, ullam saepe, similique
-              eum nostrum repudiandae, reprehenderit veniam nobis nesciunt
-              voluptatum! Error itaque ipsa quas quo nihil earum consequatur
-              sequi voluptate cupiditate ad, quasi sunt amet tempora ratione
-              debitis.
+              Agro Alliance Group 2014 yilda tashkil etilgan bo'lib, sinovdan
+              o'tgan hamda ishonchli o'simliklarni himoya qilish vositalari va
+              organik hamda mineral o'g'itlarni qishloq xo'jaligi sohasida o'z
+              o'rniga ega bo'lgan Syngenta Agro AG, SHANDONG RAINBOW
+              AGROSCIENCES CO., LTD, NANJING EGROW CROP PROTECTION CO., LTD.,
+              SHANDONG BINNONG TECHNOLOGY CO. LTD., MAJOR RETAIL SUPPLIES L.P.,
+              AGROCOM L.P., ADAFER GUBRE VE TERIM ILACLARI SAN LTD, "Sakhalin
+              Gumat" kompaniyalaridan yetkazib beradi. O'zbekiston qishloq
+              xo'jaligi fermer va dehqonlariga taklif etayotgan mahsulotlarimiz
+              o'ziga xos bo'lib, hozirda analoglari yo'q. Bugungi kungacha ushbu
+              mahsulotlar O'zbekiston Respublikasida ishlab chiqarmaydi va faqat
+              chetdan olib kelinadi. Qolaversa, mahsulotlarimizga talab
+              yildan-yilga ortib bormoqda. Ma'lum qilamizki, g'alla, paxta,
+              bog', sabzavot va boshqa ekinlarni zararli organizmlardan himoya
+              qilish uchun barcha zarur bo'lgan mahsulotlarimiz Toshkent,
+              Samarqand, Urganch, Farg'ona, Andijon, Jizzax, Qarshi, Navoi va
+              Denov shaharlaridagi omborlarimizda mavjud. Agro klaster, fermer
+              va dehqonlarga qulaylik yaratish maqsadida mahsulotlarimizni
+              Respublikanning turli hududlariga maxsus do'kon va omborxonalariga
+              yetkazib berayapmiz.
             </p>
           </div>
           <div>
@@ -42,7 +41,7 @@ const About = () => {
         </div>
         <div className="w-full md:w-[50%] flex justify-center border p-3">
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=0gd2oa1Ojiw&t=1841s"
+            url="https://www.youtube.com/watch?v=duDOjHJ1j5w"
             controls
             width="100%"
             height="400px"
