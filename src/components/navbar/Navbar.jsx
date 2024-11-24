@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* Header */}
         <div className="flex items-center justify-between p-1 mb-3">
           {/* Logo and tagline */}
-          <div className="rounded-lg rounded-tr-[30px] rounded-bl-[30px] bg-slate-100 p-1 w-[250px]">
+          <div className="rounded-sm rounded-tr-[30px] rounded-bl-[30px] bg-slate-100 p-1 w-[250px]">
             <NavLink to="/" className="flex items-center justify-between gap-3">
               <img src={logo} alt="logo" className="rounded-[17px] w-[80px]" />
               <div className="w-full text-end">
@@ -112,7 +112,7 @@ const Navbar = () => {
 
             <li className="relative group">
               <NavLink
-                to="#"
+                to="/blog"
                 className="text-white font-bold hover:text-slate-300">
                 Blog
               </NavLink>
@@ -153,7 +153,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/contact"
-                className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
+                className="block px-4 py-2 font-bold hover:bg-gray-500 rounded-lg">
                 Aloqa
               </NavLink>
             </li>

@@ -16,7 +16,7 @@ function ProductCard({ icon, title, description }) {
 
 function Catalog() {
   return (
-    <div>
+    <div className="bg-slate-100">
       <div className="container mx-auto px-[5%] py-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold">Каталогимизда</h2>

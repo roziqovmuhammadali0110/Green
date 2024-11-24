@@ -47,7 +47,7 @@ const Contact = ({ address = "Tashkent, Uzbekistan" }) => {
             </div>
             <div className="w-full ">
               <textarea
-                className="w-full outline-none bg-[#F2F3F3] p-2 rounded-md h-[400px]"
+                className="w-full outline-none bg-[#F2F3F3] p-2 rounded-md h-[250px]"
                 required
                 placeholder="Mavzu"></textarea>
             </div>

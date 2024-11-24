@@ -9,7 +9,7 @@ const Footer = () => {
     <div className=" footer w-full h-[300px]">
       <div className="container mx-auto pt-7 px-[5%] py-[1%]">
         <div className="flex items-center justify-between ">
-          <div className="rounded-lg rounded-tr-[30px] rounded-bl-[30px] bg-slate-100 p-1 w-[250px]">
+          <div className="rounded-sm rounded-tr-[30px] rounded-bl-[30px] bg-slate-100 p-1 w-[250px]">
             <NavLink to="/" className="flex items-center justify-between gap-3">
               <img src={logo} alt="logo" className="rounded-[17px] w-[80px]" />
               <div className="w-full text-end">
