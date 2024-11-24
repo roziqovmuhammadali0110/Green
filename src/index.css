@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.footer {
+  background-image: url("https://www.ifoda.uz/img/home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
