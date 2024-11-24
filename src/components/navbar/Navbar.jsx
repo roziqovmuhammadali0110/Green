@@ -1,9 +1,15 @@
-//import logo from "../../assets/img/man-holding-plant-pot.svg";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FiPhone } from "react-icons/fi";
-// import plant from "../../assets/img/plant.svg";
+import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import logo from "../../assets/img/logo1.webp";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="w-full bg-green-600">
       <div className="container mx-auto px-[5%] py-[1%]">
@@ -25,11 +31,15 @@ const Navbar = () => {
           </div>
 
           {/* Contact and Language */}
-          <div className="flex items-center gap-7">
-            <button className="flex items-center gap-3 font-medium text-white">
+          <div className="hidden md:flex items-center gap-7">
+            <div className="flex items-center gap-3 font-medium text-white">
               <FiPhone />
-              +998900624341
-            </button>
+              <div className="flex-col flex">
+                <button>+998900624341</button>
+                <button>+998998210018</button>
+                <button>+998998510018</button>
+              </div>
+            </div>
             <select
               className="w-[100px] bg-white text-green-800 p-1 rounded-lg font-medium"
               defaultValue="Uzb">
@@ -37,11 +47,23 @@ const Navbar = () => {
               <option value="Rus">Rus</option>
             </select>
           </div>
+
+          {/* Hamburger Menu */}
+          <div className="flex md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-white text-2xl focus:outline-none">
+              {isOpen ? <FiX /> : <FiMenu />}
+            </button>
+          </div>
         </div>
 
         {/* Navigation */}
-        <nav>
-          <ul className="flex items-center justify-between text-[18px] font-normal gap-6 text-white">
+        <nav
+          className={`${
+            isOpen ? "block" : "hidden"
+          } md:block bg-green-600 md:bg-transparent`}>
+          <ul className="flex flex-col md:flex-row md:items-center text-[18px] font-normal gap-6 text-white">
             <li className="relative group">
               <NavLink
                 to="/"
@@ -54,7 +76,6 @@ const Navbar = () => {
               <NavLink to="/about" className="font-bold hover:text-slate-300">
                 Kompanya
               </NavLink>
-              {/* Dropdown */}
               <ul className="absolute left-0 hidden group-hover:block bg-green-400 shadow-lg p-4 rounded-lg z-10">
                 <li>
                   <NavLink
@@ -91,7 +112,6 @@ const Navbar = () => {
               <NavLink to="/catalog" className="font-bold hover:text-slate-300">
                 Maxsulotlarimiz
               </NavLink>
-              {/* Dropdown */}
               <ul className="absolute left-0 hidden group-hover:block bg-green-400 shadow-lg p-4 rounded-lg z-10">
                 <li>
                   <NavLink
@@ -110,15 +130,13 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li className="relative group">
-              <NavLink
-                to="/blog"
-                className="text-white font-bold hover:text-slate-300">
+            <li>
+              <NavLink to="/blog" className="font-bold hover:text-slate-300">
                 Blog
               </NavLink>
             </li>
 
-            <li className="relative group">
+            <li>
               <NavLink
                 to="#"
                 className="text-white font-bold hover:text-slate-300">
@@ -132,7 +150,6 @@ const Navbar = () => {
                 className="text-white font-bold hover:text-slate-300">
                 Media
               </NavLink>
-              {/* Dropdown */}
               <ul className="absolute left-0 hidden group-hover:block bg-green-400 shadow-lg p-4 rounded-lg z-10">
                 <li>
                   <NavLink
@@ -150,20 +167,19 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
+
             <li>
-              <NavLink
-                to="/contact"
-                className="block px-4 py-2 font-bold hover:bg-gray-500 rounded-lg">
+              <NavLink to="/contact" className="font-bold hover:text-slate-300">
                 Aloqa
               </NavLink>
             </li>
+
             <li className="relative group">
               <NavLink
                 to="#"
                 className="text-white font-bold hover:text-slate-300">
                 Jurnal
               </NavLink>
-              {/* Dropdown */}
               <ul className="absolute left-0 hidden group-hover:block bg-green-400 shadow-lg p-4 rounded-lg z-10">
                 <li>
                   <NavLink
