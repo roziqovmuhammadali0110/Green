@@ -28,7 +28,7 @@ const Navbar = () => {
                   Agro<span className="text-green-500">Com</span>
                 </h3>
                 <span className="text-green-600 text-end w-full font-medium text-[12px] hover:text-slate-300">
-                  Ишончли ҳимоя
+                  Ishonchli himoya
                 </span>
               </div>
             </NavLink>

@@ -1,10 +1,18 @@
+import React, { useState } from "react"; // Ensure useState is imported
 import { RxInstagramLogo } from "react-icons/rx";
 import { TbBrandFacebook } from "react-icons/tb";
 import { PiTelegramLogo } from "react-icons/pi";
 import logo from "../../assets/img/Logo final-07.png";
 import { NavLink } from "react-router-dom";
+import ModalForm from "../modal/ModalForm";
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false); // Declare state for modal visibility
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen); // Toggle modal visibility on button click
+  };
+
   return (
     <div className="footer w-full bg-green-600 text-white">
       <div className="container mx-auto pt-7 px-[5%] py-[1%]">
@@ -22,19 +30,16 @@ const Footer = () => {
                   Agro<span className="text-green-500">Com</span>
                 </h3>
                 <span className="text-green-600 text-end w-full font-medium text-[12px] hover:text-slate-300">
-                  Ишончли ҳимоя
+                  Ishonchli himoya
                 </span>
               </div>
             </NavLink>
           </div>
-
           {/* Address Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
             <h3 className="font-medium text-green-500">Манзил</h3>
-
             <p>Тошкент шаҳар, Бегубор кўчаси 24</p>
           </div>
-
           {/* Contact Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
             <h3 className="font-medium text-green-500">Алоқа</h3>
@@ -57,9 +62,10 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <p className="text-green-500">Info@Infoda.uz</p>
+            <a href="mailto:info@infoda.uz" className="text-green-500">
+              info@infoda.uz
+            </a>
           </div>
-
           {/* Social Media Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
             <h3 className="font-medium text-green-500">
@@ -76,8 +82,17 @@ const Footer = () => {
                 <PiTelegramLogo />
               </div>
             </div>
-            <p className="text-green-500">Info@Infoda.uz</p>
+
+            {/* Footer Button to Open Modal */}
+            <button
+              onClick={toggleModal} // Open modal when button is clicked
+              className="text-green-500 font-medium px-2 py-2 rounded-lg hover:text-green-600">
+              КАЙТА АЛОКА УЧУН АРИЗА
+            </button>
           </div>
+          {/* Modal Form */}
+          {isOpen && <ModalForm toggleModal={toggleModal} />}{" "}
+          {/* Render modal when isOpen is true */}
         </div>
       </div>
     </div>
