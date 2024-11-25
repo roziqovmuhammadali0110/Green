@@ -39,9 +39,21 @@ const Navbar = () => {
             <div className="flex items-center gap-3 font-medium text-white">
               <FiPhone />
               <div className="flex-col flex">
-                <button>+998998510018</button>
-                <button>+998998210018</button>
-                <button>+998772997700</button>
+                <a
+                  href="tel:+998998510018"
+                  className="text-white hover:underline">
+                  +998998510018
+                </a>
+                <a
+                  href="tel:+998998210018"
+                  className="text-white hover:underline">
+                  +998998210018
+                </a>
+                <a
+                  href="tel:+998772997700"
+                  className="text-white hover:underline">
+                  +998772997700
+                </a>
               </div>
             </div>
             <select

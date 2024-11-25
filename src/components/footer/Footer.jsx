@@ -30,27 +30,39 @@ const Footer = () => {
 
           {/* Address Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
-            <h3 className="font-medium text-green-100">Манзил</h3>
+            <h3 className="font-medium text-green-500">Манзил</h3>
 
             <p>Тошкент шаҳар, Бегубор кўчаси 24</p>
           </div>
 
           {/* Contact Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
-            <h3 className="font-medium text-green-100">Алоқа</h3>
+            <h3 className="font-medium text-green-500">Алоқа</h3>
             <div className="flex items-center gap-3 font-medium text-white justify-center md:justify-start">
-              <div className="flex-col flex ">
-                <button>+998998510018</button>
-                <button>+998998210018</button>
-                <button>+998772997700</button>
+              <div className="flex-col flex">
+                <a
+                  href="tel:+998998510018"
+                  className="text-white hover:underline">
+                  +998998510018
+                </a>
+                <a
+                  href="tel:+998998210018"
+                  className="text-white hover:underline">
+                  +998998210018
+                </a>
+                <a
+                  href="tel:+998772997700"
+                  className="text-white hover:underline">
+                  +998772997700
+                </a>
               </div>
             </div>
-            <p className="text-green-100">Info@Infoda.uz</p>
+            <p className="text-green-500">Info@Infoda.uz</p>
           </div>
 
           {/* Social Media Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
-            <h3 className="font-medium text-green-100">
+            <h3 className="font-medium text-green-500">
               Бизни ижтимоий тармоқларда
             </h3>
             <div className="flex items-center justify-center md:justify-start gap-3">
@@ -64,7 +76,7 @@ const Footer = () => {
                 <PiTelegramLogo />
               </div>
             </div>
-            <p className="text-green-100">Info@Infoda.uz</p>
+            <p className="text-green-500">Info@Infoda.uz</p>
           </div>
         </div>
       </div>
