@@ -7,35 +7,34 @@ const About = () => {
       <div className="flex items-center justify-between mx-auto container px-[5%] py-9 flex-wrap">
         <div className="w-full md:w-[50%] space-y-3 mb-8 md:mb-0">
           <h1 className="font-semibold text-[30px] text-green-600">
-            Kompaniya haqida
+            Компания ҳақида
           </h1>
           <div>
-            <p className="font-medium text-[15px]">
-              Agro Alliance Group 2014 yilda tashkil etilgan bo'lib, sinovdan
-              o'tgan hamda ishonchli o'simliklarni himoya qilish vositalari va
-              organik hamda mineral o'g'itlarni qishloq xo'jaligi sohasida o'z
-              o'rniga ega bo'lgan Syngenta Agro AG, SHANDONG RAINBOW
-              AGROSCIENCES CO., LTD, NANJING EGROW CROP PROTECTION CO., LTD.,
-              SHANDONG BINNONG TECHNOLOGY CO. LTD., MAJOR RETAIL SUPPLIES L.P.,
-              AGROCOM L.P., ADAFER GUBRE VE TERIM ILACLARI SAN LTD, "Sakhalin
-              Gumat" kompaniyalaridan yetkazib beradi. O'zbekiston qishloq
-              xo'jaligi fermer va dehqonlariga taklif etayotgan mahsulotlarimiz
-              o'ziga xos bo'lib, hozirda analoglari yo'q. Bugungi kungacha ushbu
-              mahsulotlar O'zbekiston Respublikasida ishlab chiqarmaydi va faqat
-              chetdan olib kelinadi. Qolaversa, mahsulotlarimizga talab
-              yildan-yilga ortib bormoqda. Ma'lum qilamizki, g'alla, paxta,
-              bog', sabzavot va boshqa ekinlarni zararli organizmlardan himoya
-              qilish uchun barcha zarur bo'lgan mahsulotlarimiz Toshkent,
-              Samarqand, Urganch, Farg'ona, Andijon, Jizzax, Qarshi, Navoi va
-              Denov shaharlaridagi omborlarimizda mavjud. Agro klaster, fermer
-              va dehqonlarga qulaylik yaratish maqsadida mahsulotlarimizni
-              Respublikanning turli hududlariga maxsus do'kon va omborxonalariga
-              yetkazib berayapmiz.
+            <p className="font-medium text-[15px] sm:text-[13px] md:text-[15px]">
+              Агро Аллианcе Груп 2014 йилда ташкил этилган бўлиб, синовдан ўтган
+              ҳамда ишончли ўсимликларни ҳимоя қилиш воситалари ва органик ҳамда
+              минерал ўғитларни қишлоқ хўжалиги соҳасида ўз ўрнига эга бўлган
+              Сйнгента Агро АГ, ШАНДОНГ РАИНБОW АГРОСCИEНCEС CО., ЛТД, НАНЖИНГ
+              ЭГРОW CРОП ПРОТECТИОН CО., ЛТД., ШАНДОНГ БИННОНГ ТEЧНОЛОГЙ CО.
+              ЛТД., МАЖОР РEТАИЛ СУППЛИEС Л.П., АГРОCОМ Л.П., АДАФEР ГУБРE ВE
+              ТEРИМ ИЛАCЛАРИ САН ЛТД, "Сакҳалин Гумат" компанияларидан етказиб
+              беради. Ўзбекистон қишлоқ хўжалиги фермер ва деҳқонларига таклиф
+              этаётган маҳсулотларимиз ўзига хос бўлиб, ҳозирда аналоглари йўқ.
+              Бугунги кунгача ушбу маҳсулотлар Ўзбекистон Республикасида ишлаб
+              чиқармайди ва фақат четдан олиб келинади. Қолаверса,
+              маҳсулотларимизга талаб йилдан-йилга ортиб бормоқда. Маълум
+              қиламизки, ғалла, пахта, боғ, сабзавот ва бошқа экинларни зарарли
+              организмлардан ҳимоя қилиш учун барча зарур бўлган маҳсулотларимиз
+              Тошкент, Самарқанд, Урганч, Фарғона, Андижон, Жиззах, Қарши, Навои
+              ва Денов шаҳарларидаги омборларимизда мавжуд. Агро кластер, фермер
+              ва деҳқонларга қулайлик яратиш мақсадида маҳсулотларимизни
+              Республиканнинг турли ҳудудларига махсус дўкон ва омборхоналарига
+              етказиб бераяпмиз.
             </p>
           </div>
           <div>
             <NavLink to="/about">
-              <button className="text-green-600 font-medium">Batafsil</button>
+              <button className="text-green-600 font-medium">Батафсил</button>
             </NavLink>
           </div>
         </div>

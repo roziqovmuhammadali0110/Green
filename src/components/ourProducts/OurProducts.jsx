@@ -25,14 +25,14 @@ const ProductCard = () => {
       <div className="">
         <h3 className="text-xl font-semibold text-gray-800">FLUTRIFUL</h3>
         <p className="text-gray-600 text-sm mt-2">
-          Fungitsid (Flutriafol 250 g/l) Zamburug‘li kasalliklarga qarshi
+          Фунгицид (Флутриафол 250 г/л) Замбуруғли касалликларга қарши
         </p>
       </div>
 
       {/* "Batafsil" tugmasi */}
       <div className="flex justify-between w-full mt-4">
         <a href="#" className="text-green-500 hover:text-green-600">
-          Batafsil
+          Батафсил
         </a>
         <span className="text-green-500 text-lg">&#9733;</span>{" "}
         {/* Yashil barg ikonkasi */}

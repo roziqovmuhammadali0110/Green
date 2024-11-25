@@ -6,9 +6,7 @@ const Contact = ({ address = "Tashkent, Uzbekistan" }) => {
     <div className="bg-[#F2F2F3]">
       <div className="container mx-auto px-[5%] py-10 space-y-10">
         <div className="w-full">
-          <h1 className="font-semibold text-[30px] text-green-500">
-            Bosh ofis
-          </h1>
+          <h1 className="font-semibold text-[30px] text-green-500">Бош офис</h1>
         </div>
         <div className="relative w-full h-96">
           <iframe
@@ -22,7 +20,7 @@ const Contact = ({ address = "Tashkent, Uzbekistan" }) => {
         </div>
         <div className="bg-white space-y-7 p-10">
           <h2 className="text-[#484848] text-[20px] font-semibold">
-            Qayta aloqa uchun ariza
+            Қайта алоқа учун ариза
           </h2>
           <form className="space-y-4">
             <div className="w-full flex items-center justify-between ">
@@ -56,7 +54,7 @@ const Contact = ({ address = "Tashkent, Uzbekistan" }) => {
                 type="submit"
                 className="w-[230px] h-12 rounded-lg bg-green-600 text-white font-medium rounded-tl-3xl rounded-br-3xl">
                 {" "}
-                Yuborish
+                Юбориш
               </button>
             </div>
           </form>

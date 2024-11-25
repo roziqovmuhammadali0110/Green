@@ -4,24 +4,26 @@ import React, { useState } from "react";
 const Content1 = () => {
   return (
     <div className="p-4 text-lg text-gray-700">
-      Agro Alliance Group 2014 yilda tashkil etilgan bo'lib, sinovdan o'tgan
-      hamda ishonchli o'simliklarni himoya qilish vositalari va organik hamda
-      mineral o'g'itlarni qishloq xo'jaligi sohasida o'z o'rniga ega bo'lgan
-      Syngenta Agro AG, SHANDONG RAINBOW AGROSCIENCES CO., LTD, NANJING EGROW
-      CROP PROTECTION CO., LTD., SHANDONG BINNONG TECHNOLOGY CO. LTD., MAJOR
-      RETAIL SUPPLIES L.P., AGROCOM L.P., ADAFER GUBRE VE TERIM ILACLARI SAN
-      LTD, "Sakhalin Gumat" kompaniyalaridan yetkazib beradi. O'zbekiston
-      qishloq xo'jaligi fermer va dehqonlariga taklif etayotgan mahsulotlarimiz
-      o'ziga xos bo'lib, hozirda analoglari yo'q. Bugungi kungacha ushbu
-      mahsulotlar O'zbekiston Respublikasida ishlab chiqarmaydi va faqat chetdan
-      olib kelinadi. Qolaversa, mahsulotlarimizga talab yildan-yilga ortib
-      bormoqda. Ma'lum qilamizki, g'alla, paxta, bog', sabzavot va boshqa
-      ekinlarni zararli organizmlardan himoya qilish uchun barcha zarur bo'lgan
-      mahsulotlarimiz Toshkent, Samarqand, Urganch, Farg'ona, Andijon, Jizzax,
-      Qarshi, Navoi va Denov shaharlaridagi omborlarimizda mavjud. Agro klaster,
-      fermer va dehqonlarga qulaylik yaratish maqsadida mahsulotlarimizni
-      Respublikanning turli hududlariga maxsus do'kon va omborxonalariga
-      yetkazib berayapmiz.
+      Маълумки, мамлакатимизда қишлоқ хўжалиги соҳасига бўлган эътибор тобора
+      ортиб, шиддат билан ривожланиб бормоқда. Агрокластерлар, фермер
+      хўжаликлари ва бошқа замонавий ташаббусларнинг жорий этилиши бу соҳадаги
+      ислоҳотларнинг яққол мисолидир. Ҳозирги даврда сифатли озиқ-овқат
+      маҳсулотларини етиштириш, аҳолининг саломатлиги ва хавфсизлигини таъминлаш
+      устувор аҳамият касб этмоқда. Шу мақсадда "AgroCom" компанияси таркибидаги
+      “Agro Alliance Group” ва “Agro Aziya Group” МЧЖлари қишлоқ хўжалигида
+      замонавий талабларга жавоб берадиган самарали маҳсулотларни етказиб бериб
+      келмоқда. Жумладан, ўсимликларни зараркунандалар, касалликлар ва бегона
+      ўтлардан ҳимоя қилишга мўлжалланган кимёвий ва биологик маҳсулотлар
+      (инсектицидлар, гербицидлар, фунгицидлар ва акарицидлар), органик ҳамда
+      минерал ўғитлар, биостимуляторлар ишлаб чиқарилади ва тарқатилади.
+      Компаниянинг мақсади — фермерлар ва деҳқон хўжаликларини замонавий
+      воситалар билан таъминлаш орқали қишлоқ хўжалик экинларини ҳимоя қилиш,
+      ҳосилдорликни ошириш ва маҳсулот сифатини янада юқори даражага кўтаришдан
+      иборат. Шу билан бирга, атроф-муҳитга зарар етказмаслик ҳам асосий
+      тамойиллардан биридир. Биз доимий равишда инновацион ечимларни жорий этиш
+      ва фермерларнинг меҳнатини самарали қилиш учун барча имкониятларни ишга
+      соламиз. Ҳар бир фермер ва деҳқон учун ишончли ҳамкор бўлишга
+      интилмоқдамиз.
     </div>
   );
 };

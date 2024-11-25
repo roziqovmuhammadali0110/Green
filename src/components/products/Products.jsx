@@ -1,8 +1,10 @@
+import beetle from "../../assets/img/qongiz.png";
+
 const Products = () => {
   return (
     <div className="bg-gray-100 py-10">
       <h2 className="text-center text-3xl font-bold mb-10 text-green-500">
-        Mahsulotlarimiz
+        Маҳсулотларимиз
       </h2>
 
       {/* Ikki Katta Kartochka */}
@@ -16,10 +18,10 @@ const Products = () => {
           />
           <div className="p-4 flex flex-col justify-between">
             <h3 className="text-xl font-semibold mb-2 text-green-600">
-              Osimliklarni himoya qilish vositalari
+              Осимликларни ҳимоя қилиш воситалари
             </h3>
             <a href="#" className="text-green-600 font-medium hover:underline">
-              Katalogga otish
+              Каталўгга ўтиш
             </a>
           </div>
         </div>
@@ -32,9 +34,9 @@ const Products = () => {
             className="md:w-1/2 h-auto"
           />
           <div className="p-4 flex flex-col justify-between text-white">
-            <h3 className="text-xl font-semibold mb-2">Ogitlar</h3>
+            <h3 className="text-xl font-semibold mb-2">Ўғитлар</h3>
             <a href="#" className="text-white font-medium hover:underline">
-              Katalogga otish
+              Каталўгга ўтиш
             </a>
           </div>
         </div>
@@ -43,11 +45,11 @@ const Products = () => {
       {/* Ikonalar Qatori */}
       <div className="flex justify-center flex-wrap gap-6 mt-10">
         {[
-          { title: "Gerbitsidlar", icon: "🌿" },
-          { title: "Fungitsidlar", icon: "🍃" },
-          { title: "Insektitsidlar", icon: "🐜" },
-          { title: "Nematotsidlar", icon: "🪱" },
-          { title: "Akaritsidlar", icon: "🐛" }
+          { title: "Гербицидлар", icon: "🌿" },
+          { title: "Фунгицидлар", icon: "🍃" },
+          { title: "Инсектицидлар", icon: "🐜" },
+          { title: "Дефолиантлар", icon: "🪱" },
+          { title: "Акарацидлар", icon: "🕷" }
         ].map((item, index) => (
           <div
             key={index}
