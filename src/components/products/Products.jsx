@@ -1,5 +1,5 @@
-import beetle from "../../assets/img/qongiz.png";
-
+import aminocom from "../../assets/img/aminocom.jpg";
+import kalsiyCom from "../../assets/img/kalsiyCom.jpg";
 const Products = () => {
   return (
     <div className="bg-gray-100 py-10">
@@ -8,17 +8,17 @@ const Products = () => {
       </h2>
 
       {/* Ikki Katta Kartochka */}
-      <div className="flex flex-wrap justify-center gap-6 mx-auto container px-4">
+      <div className="flex flex-wrap justify-between gap-6 mx-auto container px-4">
         {/* Kartochka 1 */}
         <div className="flex flex-col md:flex-row w-full md:w-[45%] bg-white shadow-md">
           <img
-            src="https://via.placeholder.com/400x200" // Rasmingiz URL manzilini o'rnating
+            src={aminocom} // Rasmingiz URL manzilini o'rnating
             alt="O'simliklarni himoya qilish"
             className="md:w-1/2 h-auto"
           />
           <div className="p-4 flex flex-col justify-between">
             <h3 className="text-xl font-semibold mb-2 text-green-600">
-              Осимликларни ҳимоя қилиш воситалари
+              Ўсимликларни ҳимоя қилиш воситалари
             </h3>
             <a href="#" className="text-green-600 font-medium hover:underline">
               Каталўгга ўтиш
@@ -29,7 +29,7 @@ const Products = () => {
         {/* Kartochka 2 */}
         <div className="flex flex-col md:flex-row w-full md:w-[45%] bg-green-600 shadow-md">
           <img
-            src="https://via.placeholder.com/400x200" // Rasmingiz URL manzilini o'rnating
+            src={kalsiyCom} // Rasmingiz URL manzilini o'rnating
             alt="Ogitlar"
             className="md:w-1/2 h-auto"
           />

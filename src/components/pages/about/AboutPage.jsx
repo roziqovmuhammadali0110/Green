@@ -71,7 +71,7 @@ const AboutPage = () => {
     <section>
       <div className="mx-auto container px-[5%] py-10">
         <h1 className="font-semibold text-green-500 text-[30px]">
-          Агро Кимё Ҳимоя
+          Компания ҳақида
         </h1>
         <div className="w-full mt-10">
           {/* Tabs Header */}
