@@ -72,15 +72,21 @@ const Footer = () => {
               Бизни ижтимоий тармоқларда
             </h3>
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
-                <TbBrandFacebook />
-              </div>
-              <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
-                <RxInstagramLogo />
-              </div>
-              <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
-                <PiTelegramLogo />
-              </div>
+              <a href="https://www.facebook.com/100090505449159/">
+                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
+                  <TbBrandFacebook />
+                </div>
+              </a>
+              <a href="https://www.instagram.com/agrocom_uz?igsh=OXRyOTA3YXo5enhq">
+                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
+                  <RxInstagramLogo />
+                </div>
+              </a>
+              <a href="https://t.me/agrocomguruh">
+                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
+                  <PiTelegramLogo />
+                </div>
+              </a>
             </div>
 
             {/* Footer Button to Open Modal */}
