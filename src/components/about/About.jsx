@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
       <div className="flex items-center justify-between mx-auto container px-[5%] py-9 flex-wrap">
-        <div className="w-full md:w-[50%] space-y-3 mb-8 md:mb-0">
+        <div className="w-full md:w-[50%] space-y-3 pr-4 mb-8 md:mb-0">
           <h1 className="font-semibold text-[30px] text-green-600">
             Компания ҳақида
           </h1>

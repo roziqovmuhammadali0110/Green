@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Products from "../products/Products";
+import agro from "../../assets/img/agro.png";
 
 // ProductCard komponenti
 const ProductCard = () => {
@@ -10,7 +11,7 @@ const ProductCard = () => {
       {/* Rasm */}
       <div className="relative">
         <img
-          src="https://www.ifoda.uz/uploads/1/d0djwo9kMMnRC_q8PYlxblDXeqcYX0u5.png" // Rasm manzili
+          src={agro} // Rasm manzili
           alt="Product Image"
           className="w-full h-48 object-cover rounded-lg"
         />
@@ -23,9 +24,9 @@ const ProductCard = () => {
 
       {/* Mahsulot nomi va tavsifi */}
       <div className="">
-        <h3 className="text-xl font-semibold text-gray-800">FLUTRIFUL</h3>
+        <h3 className="text-xl font-semibold text-gray-800">Agro-Topshit</h3>
         <p className="text-gray-600 text-sm mt-2">
-          Фунгицид (Флутриафол 250 г/л) Замбуруғли касалликларга қарши
+          Агро-Топшит (Агро-Топшит 113 г/л) Гербицидлар касалликларга қарши
         </p>
       </div>
 
