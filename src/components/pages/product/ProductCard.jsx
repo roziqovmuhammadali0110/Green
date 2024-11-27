@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import humik from "../../../assets/img/humik.jpg";
 import aminocom from "../../../assets/img/aminocom.jpg";
 import kaliyfos from "../../../assets/img/kaliyfos.jpg";
+import agro from "../../../assets/img/agro.png";
 
 function ProductCard({ icon, title, description }) {
   return (
@@ -27,8 +28,8 @@ function Catalog() {
       category: "Инсектицидлар"
     },
     {
-      icon: aminocom,
-      title: "BENTOGRAN",
+      icon: agro,
+      title: "Agro-Topshit",
       description:
         "Қўлланиши: Галла, маккажихори, беда ва шолининг фаол ўсув даврида.",
       category: "Гербицидлар"
