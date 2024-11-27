@@ -1,5 +1,5 @@
-import aminocom from "../../assets/img/aminocom.jpg";
-import kalsiyCom from "../../assets/img/kalsiyCom.jpg";
+import aminocom from "../../../assets/img/aminocom.jpg";
+import kalsiyCom from "../../../assets/img/kalsiyCom.jpg";
 const Products = () => {
   return (
     <div className="bg-gray-100 py-10">

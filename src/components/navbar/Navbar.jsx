@@ -199,7 +199,7 @@ const Navbar = () => {
               <ul className="absolute left-0 hidden group-hover:block bg-green-400 shadow-lg p-4 rounded-lg z-10">
                 <li>
                   <NavLink
-                    to="#"
+                    to="/journal"
                     className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
                     Агро журнали
                   </NavLink>
