@@ -6,6 +6,7 @@ import Contact from "./components/contact/Contact";
 import AboutPage from "./components/pages/about/AboutPage";
 import Catalog from "./components/pages/product/ProductCard";
 import Blog from "./components/blog/Blog";
+import News from "./components/pages/news/News";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/news" element={<News />} />
       </Routes>
       <Footer />
     </>

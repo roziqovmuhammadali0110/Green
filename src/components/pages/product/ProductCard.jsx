@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import humik from "../../../assets/img/humik.jpg";
 import aminocom from "../../../assets/img/aminocom.jpg";
 import kaliyfos from "../../../assets/img/kaliyfos.jpg";
+
 function ProductCard({ icon, title, description }) {
   return (
     <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 m-4">
@@ -15,6 +16,44 @@ function ProductCard({ icon, title, description }) {
 }
 
 function Catalog() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const products = [
+    {
+      icon: humik,
+      title: "AGROFOS-D",
+      description:
+        "Тавсиф этиш хусусияти: Ушбу препарат олма курти, цикадалар.",
+      category: "Инсектицидлар"
+    },
+    {
+      icon: aminocom,
+      title: "BENTOGRAN",
+      description:
+        "Қўлланиши: Галла, маккажихори, беда ва шолининг фаол ўсув даврида.",
+      category: "Гербицидлар"
+    },
+    {
+      icon: kaliyfos,
+      title: "DALATE",
+      description:
+        "Тавсиф этиш хусусияти: Барча эксилардаги сўрувчи ва кемирувчи.",
+      category: "Фунгицидлар"
+    }
+  ];
+
+  const categories = [
+    { title: "Гербицидлар", icon: "🌿" },
+    { title: "Фунгицидлар", icon: "🍃" },
+    { title: "Инсектицидлар", icon: "🐜" },
+    { title: "Дефолиантлар", icon: "🪱" },
+    { title: "Акарацидлар", icon: "🕷" }
+  ];
+
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
+
   return (
     <div className="bg-slate-100">
       <div className="container mx-auto px-[5%] py-8">
@@ -23,22 +62,31 @@ function Catalog() {
           <p className="text-lg text-gray-600">93+ турлари маҳсулотлар</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <ProductCard
-            icon={humik}
-            title="AGROFOS-D"
-            description="Тавсиф этиш хусусияти: Ушбу препарат олма курти, цикадалар."
-          />
-          <ProductCard
-            icon={aminocom}
-            title="BENTOGRAN"
-            description="Қўлланиши: Галла, маккажихори, беда ва шолининг фаол ўсув даврида."
-          />
-          <ProductCard
-            icon={kaliyfos}
-            title="DALATE"
-            description="Тавсиф этиш хусусияти: Барча эксилардаги сўрувчи ва кемирувчи."
-          />
+        {/* Kategoriyalar */}
+        <div className="flex justify-center flex-wrap gap-6 mt-10">
+          {categories.map((item, index) => (
+            <div
+              key={index}
+              className={`flex flex-col items-center bg-green-500 text-white p-4 w-28 rounded-md shadow-md cursor-pointer ${
+                selectedCategory === item.title ? "bg-green-700" : ""
+              }`}
+              onClick={() => setSelectedCategory(item.title)}>
+              <div className="text-3xl mb-2">{item.icon}</div>
+              <p className="text-center text-sm font-medium">{item.title}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Mahsulotlar */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+          {filteredProducts.map((product, index) => (
+            <ProductCard
+              key={index}
+              icon={product.icon}
+              title={product.title}
+              description={product.description}
+            />
+          ))}
         </div>
       </div>
     </div>

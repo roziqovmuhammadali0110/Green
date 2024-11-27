@@ -10,7 +10,7 @@ const Products = () => {
       {/* Ikki Katta Kartochka */}
       <div className="flex flex-wrap justify-between gap-6 mx-auto container px-4">
         {/* Kartochka 1 */}
-        <div className="flex flex-col md:flex-row w-full md:w-[45%] bg-white shadow-md">
+        <div className="flex flex-col md:flex-row w-full md:w-[45%] h-[200px] bg-white shadow-md">
           <img
             src={aminocom} // Rasmingiz URL manzilini o'rnating
             alt="O'simliklarni himoya qilish"
@@ -27,7 +27,7 @@ const Products = () => {
         </div>
 
         {/* Kartochka 2 */}
-        <div className="flex flex-col md:flex-row w-full md:w-[45%] bg-green-600 shadow-md">
+        <div className="flex flex-col md:flex-row w-full md:w-[45%] h-[200px] bg-green-600 shadow-md">
           <img
             src={kalsiyCom} // Rasmingiz URL manzilini o'rnating
             alt="Ogitlar"
