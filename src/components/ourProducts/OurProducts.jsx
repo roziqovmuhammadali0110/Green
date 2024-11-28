@@ -26,7 +26,7 @@ const ProductCard = () => {
       <div className="">
         <h3 className="text-xl font-semibold text-gray-800">Agro-Topshit</h3>
         <p className="text-gray-600 text-sm mt-2">
-          Агро-Топшит (Агро-Топшит 113 г/л) Гербицидлар касалликларга қарши
+          Агро-Топшит (Агро-Топшит 113 г/л) Бегона ўтларга қарши
         </p>
       </div>
 
