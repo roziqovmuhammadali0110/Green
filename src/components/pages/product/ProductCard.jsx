@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import humik from "../../../assets/img/humik.jpg";
-import aminocom from "../../../assets/img/aminocom.jpg";
 import kaliyfos from "../../../assets/img/kaliyfos.jpg";
 import agro from "../../../assets/img/agro.png";
 
 function ProductCard({ icon, title, description }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 m-4">
+    <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 m-4 space-y-2">
       <div className="flex justify-center items-center mb-4">
         <img src={icon} alt={title} className="h-[230px] w-[230px]" />
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
       <p className="text-gray-700 text-start">{description}</p>
+      <button className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
+        Батафсил
+      </button>
     </div>
   );
 }
