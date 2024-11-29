@@ -24,21 +24,21 @@ function Catalog() {
   const products = [
     {
       icon: humik,
-      title: "AGROFOS-D",
+      title: "ҲУМИCОМ",
       description:
         "Тавсиф этиш хусусияти: Ушбу препарат олма курти, цикадалар.",
       category: "Инсектицидлар"
     },
     {
       icon: agro,
-      title: "Agro-Topshit",
+      title: "Агро-Топшит",
       description:
         "Қўлланиши: Галла, маккажихори, беда ва шолининг фаол ўсув даврида.",
       category: "Гербицидлар"
     },
     {
       icon: kaliyfos,
-      title: "DALATE",
+      title: "КАЛИЙФОС CОМ",
       description:
         "Тавсиф этиш хусусияти: Барча эксилардаги сўрувчи ва кемирувчи.",
       category: "Фунгицидлар"

@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-green-600">
-      <div className="container mx-auto px-[5%] py-[1%]">
+      <div className="container mx-auto px-[5%] xs:pb-[3%] py-[1%]">
         {/* Header */}
         <div className="flex items-center justify-between p-1 mb-3">
           {/* Logo and tagline */}
@@ -32,6 +32,14 @@ const Navbar = () => {
                 </span>
               </div>
             </NavLink>
+            <div className="md:hidden py-2 flex font-medium text-white gap-1">
+              <p>Tel:</p>
+              <a
+                href="tel:+998998510018"
+                className="text-white hover:underline">
+                +998 99 851 00 18
+              </a>
+            </div>
           </div>
 
           {/* Contact and Language */}
@@ -42,22 +50,22 @@ const Navbar = () => {
                 <a
                   href="tel:+998998510018"
                   className="text-white hover:underline">
-                  +998998510018
+                  +998 99 851 00 18
                 </a>
                 <a
                   href="tel:+998998210018"
                   className="text-white hover:underline">
-                  +998998210018
+                  +998 99 821 00 18
                 </a>
                 <a
                   href="tel:+998772997700"
                   className="text-white hover:underline">
-                  +998772997700
+                  +998 77 299 77 00
                 </a>
               </div>
             </div>
             <select
-              className="w-[100px] bg-white text-green-800 p-1 rounded-lg font-medium"
+              className="w-[100px] bg-white text-green-800 p-2 rounded-lg font-medium"
               defaultValue="Uzb">
               <option value="Uzb">Uzb</option>
               <option value="Rus">Rus</option>
@@ -133,7 +141,7 @@ const Navbar = () => {
                   <NavLink
                     to="/catalog"
                     className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
-                    Ўсимликларни ҳимоя қилиш воситалари
+                    У́симликларни озиқлантириш воситалари
                   </NavLink>
                 </li>
                 <li>

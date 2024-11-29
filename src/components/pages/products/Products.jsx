@@ -1,5 +1,7 @@
-import aminocom from "../../../assets/img/aminocom.jpg";
+import { NavLink } from "react-router-dom";
+//import aminocom from "../../../assets/img/aminocom.jpg";
 import kalsiyCom from "../../../assets/img/kalsiyCom.jpg";
+import agroVertimaks from "../../../assets/img/Agro-Vertimeks.png";
 const Products = () => {
   return (
     <div className="bg-gray-100 py-10">
@@ -12,17 +14,19 @@ const Products = () => {
         {/* Kartochka 1 */}
         <div className="flex flex-col md:flex-row w-full md:w-[45%] h-[200px] bg-white shadow-md">
           <img
-            src={aminocom} // Rasmingiz URL manzilini o'rnating
+            src={agroVertimaks} // Rasmingiz URL manzilini o'rnating
             alt="O'simliklarni himoya qilish"
             className="md:w-1/2 h-auto"
           />
           <div className="p-4 flex flex-col justify-between">
             <h3 className="text-xl font-semibold mb-2 text-green-600">
-              Ўсимликларни ҳимоя қилиш воситалари
+              У́симликларни озиқлантириш воситалари
             </h3>
-            <a href="#" className="text-green-600 font-medium hover:underline">
+            <NavLink
+              to="/catalog"
+              className="text-green-600 font-medium hover:underline">
               Каталўгга ўтиш
-            </a>
+            </NavLink>
           </div>
         </div>
 

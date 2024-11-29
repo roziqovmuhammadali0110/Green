@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
       <div className="flex items-center justify-between mx-auto container px-[5%] py-9 flex-wrap">
-        <div className="w-full md:w-[50%] space-y-3 pr-4 mb-8 md:mb-0">
+        <div className="w-full space-y-3 pr-4 mb-8 md:mb-0">
           <h1 className="font-semibold text-[30px] text-green-600">
             Компания ҳақида
           </h1>
@@ -16,7 +16,7 @@ const About = () => {
               хўжаликларининг ташкил этилаётгани бунга яққол мисол бўла олади.
               Мамлакатимизда сифатли озиқ-овқат маҳсулотларини етиштиришда аҳоли
               саломатлиги ва хавфсизлигини таъминлаш мақсадида "AgroCom"
-              компанияси таркибига кирувчи “Agro Alliance Group” ва “Agro Aziя
+              компанияси таркибига кирувчи “Agro Alliance Group” ва “Agro Aziya
               Group” МЧЖлари ҳозирги замон талабларига жавоб берадиган, арзон ва
               самарадорлиги юқори бўлган ўсимликларни зараркунандалар,
               касалликлар ва бегона ўтлардан ҳимоя қилишга ёрдам берадиган
@@ -44,14 +44,14 @@ const About = () => {
             </NavLink>
           </div>
         </div>
-        <div className="w-full md:w-[50%] flex justify-center border p-3">
+        {/* <div className="w-full md:w-[50%] flex justify-center border p-3">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=duDOjHJ1j5w"
             controls
             width="100%"
             height="400px"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
