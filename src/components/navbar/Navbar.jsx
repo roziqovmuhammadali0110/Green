@@ -146,6 +146,13 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
+                    to="/catalog"
+                    className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
+                    Ўсимликларни ҳимоя қилиш воситалари
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
                     to="#"
                     className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
                     Ўғитлар

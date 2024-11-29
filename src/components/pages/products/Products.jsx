@@ -25,7 +25,7 @@ const Products = () => {
             <NavLink
               to="/catalog"
               className="text-green-600 font-medium hover:underline">
-              Каталўгга ўтиш
+              Каталогга ўтиш
             </NavLink>
           </div>
         </div>
@@ -40,7 +40,7 @@ const Products = () => {
           <div className="p-4 flex flex-col justify-between text-white">
             <h3 className="text-xl font-semibold mb-2">Ўғитлар</h3>
             <a href="#" className="text-white font-medium hover:underline">
-              Каталўгга ўтиш
+              Каталогга ўтиш
             </a>
           </div>
         </div>
