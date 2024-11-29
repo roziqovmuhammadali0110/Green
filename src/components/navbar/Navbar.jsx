@@ -98,14 +98,14 @@ const Navbar = () => {
 
             <li className="relative group">
               <NavLink to="#" className="font-bold hover:text-slate-300">
-                Компаня
+                Компания
               </NavLink>
               <ul className="absolute left-0 hidden group-hover:block bg-green-400 shadow-lg p-4 rounded-lg z-10">
                 <li>
                   <NavLink
                     to="/about"
                     className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
-                    Компаня ҳақида
+                    Компания ҳақида
                   </NavLink>
                 </li>
                 <li>
