@@ -38,7 +38,10 @@ const Footer = () => {
           {/* Address Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
             <h3 className="font-medium text-green-500">Манзил</h3>
-            <p>Тошкент шаҳар, Бегубор кўчаси 24</p>
+            <p className="max-w-[300px]">
+              Тошкент Шахар, Мирзо Улуғбек тумани, Сайрам МФЙ, Ясси кўчаси, 38
+              уй
+            </p>
           </div>
           {/* Contact Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
