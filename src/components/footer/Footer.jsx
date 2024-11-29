@@ -65,8 +65,8 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <a href="mailto:info@infoda.uz" className="text-green-500">
-              info@infoda.uz
+            <a href="mailto:info@aag-group.uz" className="text-green-500">
+              info@aag-group.uz
             </a>
           </div>
           {/* Social Media Section */}
