@@ -8,6 +8,7 @@ import Catalog from "./components/pages/product/ProductCard";
 import Blog from "./components/blog/Blog";
 import News from "./components/pages/news/News";
 import Magazine from "./components/magazine/Magazine";
+import ProductDetails from "./components/pages/fullInformation/ProductDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<News />} />
         <Route path="/journal" element={<Magazine />} />
+        <Route path="/details" element={<ProductDetails />} />
       </Routes>
       <Footer />
     </>

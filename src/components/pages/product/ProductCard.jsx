@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import humik from "../../../assets/img/humik.jpg";
 import kaliyfos from "../../../assets/img/kaliyfos.jpg";
 import agro from "../../../assets/img/agro.png";
+import { NavLink } from "react-router-dom";
 
 function ProductCard({ icon, title, description }) {
   return (
@@ -11,9 +12,12 @@ function ProductCard({ icon, title, description }) {
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
       <p className="text-gray-700 text-start">{description}</p>
-      <button className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
-        Батафсил
-      </button>
+      <NavLink to="/details">
+        {" "}
+        <button className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
+          Батафсил
+        </button>
+      </NavLink>
     </div>
   );
 }
