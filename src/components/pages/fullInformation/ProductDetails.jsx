@@ -8,25 +8,24 @@ const ProductDetails = () => {
         <img
           src={agroVertimaks}
           alt="Dori rasmi"
-          className="w-[250px] h-[300px] object-cover mb-4"
+          className="w-[250px] h-[300px] object-cover mb-4 border-r-2 border-white"
         />
 
         {/* Dori haqidagi to‘liq ma'lumotlar */}
-        <div className="space-y-3">
-          <h2 className="text-2xl font-bold text-white mb-2">Agro-Topshit</h2>
+        <div className="space-y-3 px-3">
+          <h2 className="text-2xl font-bold text-white mb-2">Агро-Топшит</h2>
           <p className="text-md text-white mb-4 space-y-3">
-            <span className="font-semibold">Xususiyatlar:</span> Gerbitsid{" "}
+            <span className="font-semibold">Хусусиятлар:</span> Гербицид <br />
+            <span className="font-semibold">Таркиби:</span> Бентоназа (48%){" "}
             <br />
-            <span className="font-semibold">Tarkibi:</span> Bentonaza (48%){" "}
-            <br />
-            <span className="font-semibold">Qo‘llanilishi:</span> Suv zohoti
-            qarshi foydalaniladigan gerbitsid. <br />
+            <span className="font-semibold">Қўлланилиши:</span> Сув зоҳоти қарши
+            фойдаланиладиган гербицид. <br />
           </p>
 
           <p className="text-md text-white mb-4">
-            <span className="font-semibold">Tavsif:</span>
-            Galma, maysazorlar, beda va sholini oʻsish davrida suv zohoti va
-            boshqa begona o'tlarga qarshi qo‘llaniladi.
+            <span className="font-semibold">Тавсиф:</span>
+            Галма, майсазорлар, беда ва шолини ўсиш даврида сув зоҳоти ва бошқа
+            бегона ўтларга қарши қўлланилади.
           </p>
 
           {/* Miqdor va savatga qo‘shish tugmasi */}
