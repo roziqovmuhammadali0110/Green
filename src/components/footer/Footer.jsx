@@ -51,17 +51,17 @@ const Footer = () => {
                 <a
                   href="tel:+998998510018"
                   className="text-white hover:underline">
-                  +998998510018
+                  +998 99 851 00 18
                 </a>
                 <a
                   href="tel:+998998210018"
                   className="text-white hover:underline">
-                  +998998210018
+                  +998 99 821 00 18
                 </a>
                 <a
                   href="tel:+998772997700"
                   className="text-white hover:underline">
-                  +998772997700
+                  +998 77 299 77 00
                 </a>
               </div>
             </div>

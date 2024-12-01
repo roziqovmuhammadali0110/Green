@@ -20,7 +20,7 @@ const Products = () => {
           />
           <div className="p-4 flex flex-col justify-between">
             <h3 className="text-xl font-semibold mb-2 text-green-600">
-              У́симликларни озиқлантириш воситалари
+              Ўсимликларни химоя қилиш воситалар
             </h3>
             <NavLink
               to="/catalog"
@@ -38,7 +38,9 @@ const Products = () => {
             className="md:w-1/2 h-auto"
           />
           <div className="p-4 flex flex-col justify-between text-white">
-            <h3 className="text-xl font-semibold mb-2">Ўғитлар</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              Ўсимликларни озиқлантириш воситалари
+            </h3>
             <NavLink
               to="/catalog"
               className="text-white font-medium hover:underline">

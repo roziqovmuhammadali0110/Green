@@ -7,7 +7,7 @@ import agro from "../../assets/img/agro.png";
 // ProductCard komponenti
 const ProductCard = () => {
   return (
-    <div className="bg-white rounded-lg shadow-lg flex flex-col items-center p-4 space-y-4 w-full sm:w-64">
+    <div className="bg-white rounded-lg shadow-lg flex flex-col items-center p-4 space-y-4 w-full xs:w-64">
       {/* Rasm */}
       <div className="relative">
         <img
