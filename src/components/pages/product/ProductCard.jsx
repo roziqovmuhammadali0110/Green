@@ -4,6 +4,13 @@ import kaliyfos from "../../../assets/img/kaliyfos.jpg";
 import agro from "../../../assets/img/agro.png";
 import { NavLink } from "react-router-dom";
 
+import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
+import nihol from "../../../assets/img/Icons_GreenNihol.png";
+import qongiz from "../../../assets/img/Icons_GreenQongiz.png";
+import shudring from "../../../assets/img/Icons_GreenShudringli.png";
+import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
+import yer from "../../../assets/img/Icons_Green.png";
+
 function ProductCard({ icon, title, description }) {
   return (
     <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 m-4 space-y-2">
@@ -50,11 +57,11 @@ function Catalog() {
   ];
 
   const categories = [
-    { title: "Гербицидлар", icon: "🌿" },
-    { title: "Фунгицидлар", icon: "🍃" },
-    { title: "Инсектицидлар", icon: "🐜" },
-    { title: "Дефолиантлар", icon: "🪱" },
-    { title: "Акарацидлар", icon: "🕷" }
+    { title: "Гербицидлар", icon: shudring },
+    { title: "Фунгицидлар", icon: gerbli },
+    { title: "Инсектицидлар", icon: qongiz },
+    { title: "Дефолиантлар", icon: yer },
+    { title: "Акарацидлар", icon: yaproq }
   ];
 
   const filteredProducts = selectedCategory
@@ -78,7 +85,11 @@ function Catalog() {
                 selectedCategory === item.title ? "bg-green-700" : ""
               }`}
               onClick={() => setSelectedCategory(item.title)}>
-              <div className="text-3xl mb-2">{item.icon}</div>
+              <img
+                src={item.icon}
+                alt={item.title}
+                className="w-16 h-16 mb-2 object-contain"
+              />
               <p className="text-center text-sm font-medium">{item.title}</p>
             </div>
           ))}
