@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import humik from "../../../assets/img/humik.jpg";
-import kaliyfos from "../../../assets/img/kaliyfos.jpg";
+
 import agro from "../../../assets/img/agro.png";
 import { NavLink } from "react-router-dom";
 
@@ -34,25 +33,11 @@ function Catalog() {
 
   const products = [
     {
-      icon: humik,
-      title: "ҲУМИCОМ",
-      description:
-        "Тавсиф этиш хусусияти: Ушбу препарат олма курти, цикадалар.",
-      category: "Инсектицидлар"
-    },
-    {
       icon: agro,
       title: "Агро-Топшит",
       description:
         "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
       category: "Гербицидлар"
-    },
-    {
-      icon: kaliyfos,
-      title: "КАЛИЙФОС CОМ",
-      description:
-        "Тавсиф этиш хусусияти: Барча эксилардаги сўрувчи ва кемирувчи.",
-      category: "Фунгицидлар"
     }
   ];
 

@@ -23,16 +23,27 @@ const ProductDetails = () => {
             </h2>
 
             <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">Хусусиятлар:</span>{" "}
-              Гербицид
+              <span className="font-semibold text-[16px]">
+                Шолида бир йиллик ва кўп йиллик бошоқли, икки паллали ҳамда кенг
+                баргли ботқоқ бегона ўтларга қарши гербицид.
+              </span>{" "}
             </p>
             <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">Таркиби:</span>{" "}
-              Бентоназа (48%)
+              <span className="font-semibold text-[16px]">
+                Таъсир этувчи модда:
+              </span>{" "}
+              Цигалофон бутил + пеноксулан (cyhalofop-butyl + penoxsulam)
             </p>
             <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">Қўлланилиши:</span>{" "}
-              Сув зоҳоти қарши фойдаланиладиган гербицид.
+              <span className="font-semibold text-[16px]">Кимёвий синфи:</span>{" "}
+              Триазолпиримидинлар
+            </p>
+            <p className="text-md lg:text-md mb-4">
+              <span className="font-semibold text-[16px]">Препарат шакли:</span>{" "}
+              Мойли дисперсия
+            </p>
+            <p className="text-md lg:text-md mb-4">
+              <span className="font-semibold text-[16px]">Қадоқ:</span> 1 л.
             </p>
           </div>
         </div>
