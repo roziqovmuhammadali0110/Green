@@ -5,15 +5,19 @@ import kalsiyCom from "../../assets/img/kalsiyCom.jpg";
 
 function ProductCard({ icon, date, title, description }) {
   return (
-    <div className="bg-white space-y-3 rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-[350px] lg:w-[400px] m-4">
+    <div className="bg-white space-y-3 rounded-lg shadow-lg hover:shadow-2xl p-4 w-full xs:w-72 sm:w-60 md:w-[250px] lg:w-[300px] m-4">
       <div className="flex justify-center items-center mb-4">
-        <img src={icon} alt={title} className="" />
+        <img src={icon} alt={title} className="max-h-[200px] object-contain" />
       </div>
-      <h3 className="text-xl font-semibold text-[#484848] text-start mb-2">
+      <h3 className="text-xl xs:text-[17px] md:text-xl font-semibold text-[#484848] text-start mb-2">
         {title}
       </h3>
-      <p className="font-medium text-start mb-2 text-green-600">{date}</p>
-      <p className="text-gray-700 font-medium text-start">{description}</p>
+      <p className="font-medium xs:text-sm md:text-[16px] text-start mb-2 text-green-600">
+        {date}
+      </p>
+      <p className="text-gray-700 xs:text-sm md:text-[16px] font-medium text-start">
+        {description}
+      </p>
       <button className="bg-green-500 text-white p-2 w-full font-medium rounded hover:bg-green-600 transition">
         Davomi
       </button>
@@ -24,14 +28,15 @@ function ProductCard({ icon, date, title, description }) {
 const Blog = () => {
   return (
     <div className="bg-slate-100">
-      <div className="container mx-auto px-[5%] py-8">
+      <div className="container mx-auto px-4 xs:px-0 md:px-4 py-8">
         <div className="text-start mb-8">
-          <h2 className="text-3xl font-bold text-green-500">
+          <h2 className="text-3xl xs:text-2xl md:text-3xl font-bold text-green-500">
             Блогимизни кузатиб боринг
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Grid Layoutni konfiguratsiyangizga moslashtirish */}
+        <div className="grid w-full grid-cols-1 xs:grid-cols-1 justify-between sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-6 ">
           <ProductCard
             icon={kaliyfos}
             title="ҒЎЗАНИ ЎҒИТЛАШ ДАСТУРИ"

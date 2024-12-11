@@ -83,19 +83,18 @@ const Products = () => {
         {[
           { title: "Гербицидлар", icon: shudring },
           { title: "Фунгицидлар", icon: gerbli },
-          { title: "Инсектицидлар", icon: qongiz },
-          { title: "Дефолиантлар", icon: yer },
-          { title: "Акарацидлар", icon: yaproq }
+          { title: "Инсектицидлар, Инсектоакарацидлар", icon: qongiz },
+          { title: "Дефолиантлар", icon: yer }
         ].map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-green-500 text-white p-4 w-28 rounded-md shadow-md">
+            className="flex flex-col items-center bg-green-500 text-white p-4 w-32 rounded-md shadow-md">
             <img
               src={item.icon}
               alt={item.title}
               className="w-16 h-16 mb-2 object-contain"
             />
-            <p className="text-center text-sm font-medium">{item.title}</p>
+            <p className="text-center text-[12px] font-medium">{item.title}</p>
           </div>
         ))}
       </div>
