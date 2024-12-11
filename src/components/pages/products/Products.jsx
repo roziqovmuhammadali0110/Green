@@ -4,10 +4,8 @@ import { NavLink } from "react-router-dom";
 import kalsiyCom from "../../../assets/img/kalsiyCom.jpg";
 import agroVertimaks from "../../../assets/img/Agro-Vertimeks.png";
 import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
-import nihol from "../../../assets/img/Icons_GreenNihol.png";
 import qongiz from "../../../assets/img/Icons_GreenQongiz.png";
 import shudring from "../../../assets/img/Icons_GreenShudringli.png";
-import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
 import yer from "../../../assets/img/Icons_Green.png";
 //import axios from "axios";
 
@@ -83,7 +81,7 @@ const Products = () => {
         {[
           { title: "Гербицидлар", icon: shudring },
           { title: "Фунгицидлар", icon: gerbli },
-          { title: "Инсектицидлар, Инсектоакарацидлар", icon: qongiz },
+          { title: "Инсектоакарацидлар", icon: qongiz },
           { title: "Дефолиантлар", icon: yer }
         ].map((item, index) => (
           <div

@@ -59,7 +59,7 @@ function Catalog() {
   const categories = [
     { title: "Гербицидлар", icon: shudring },
     { title: "Фунгицидлар", icon: gerbli },
-    { title: "Инсектицидлар, Инсектоакарацидлар", icon: qongiz },
+    { title: "Инсектоакарацидлар", icon: qongiz },
     { title: "Дефолиантлар", icon: yer }
   ];
 
