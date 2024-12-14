@@ -1,5 +1,11 @@
 import React from "react";
 import agroVertimaks from "../../../assets/img/agro.png";
+import axios from "axios";
+
+axios
+  .get("http://161.35.141.92/Home/fun")
+  .then((res) => console.log(res.data[0].tableOnes))
+  .catch((err) => console.log(err));
 
 const ProductDetails = () => {
   return (
