@@ -42,34 +42,38 @@ const Products = () => {
       {/* Ikki Katta Kartochka */}
       <div className="flex flex-wrap justify-between gap-6 mx-auto container px-4">
         {/* Kartochka 1 */}
-        <div className="flex flex-col md:flex-row w-full md:w-[45%] h-[200px] bg-white shadow-md">
+        <div className="flex flex-col xs:justify-between xs:pb-2 md:pb-0 md:text-start xs:items-center md:h-[200px] xs:w-[300px] text-center md:flex-row w-full xs:h-[320px] md:w-[45%]  bg-white shadow-md">
           <img
             src={agroVertimaks}
             alt="O'simliklarni himoya qilish"
-            className="md:w-1/2 h-auto"
+            className="md:w-1/2 xs:h-[70%] h-[200px] xs:w-[200px] md:h-full text-center"
           />
           <div className="p-4 flex flex-col justify-between">
-            <h3 className="text-xl font-semibold mb-2 text-green-600">
+            <h3 className="text-xl xs:text-[17px] md:text-xl font-semibold mb-2 text-green-600">
               Ўсимликларни химоя қилиш воситалар
             </h3>
             <NavLink
               to="/catalog"
-              className="text-green-600 font-medium hover:underline">
+              className="text-green-600 xs:text-[13px] md:text-[16px] font-medium hover:underline">
               Каталогга ўтиш
             </NavLink>
           </div>
         </div>
 
         {/* Kartochka 2 */}
-        <div className="flex flex-col md:flex-row w-full md:w-[45%] h-[200px] bg-green-600 shadow-md">
-          <img src={kalsiyCom} alt="Ogitlar" className="md:w-1/2 h-auto" />
+        <div className="flex flex-col xs:justify-between md:text-start xs:pb-2 md:pb-0 xs:items-center md:h-[200px] xs:w-[300px] text-center md:flex-row w-full xs:h-[320px] md:w-[45%]  bg-green-600 shadow-md">
+          <img
+            src={kalsiyCom}
+            alt="Ogitlar"
+            className="md:w-1/2 xs:h-[70%] h-[200px] xs:w-[100%]  md:h-full text-center"
+          />
           <div className="p-4 flex flex-col justify-between text-white">
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-xl xs:text-[17px] md:text-xl font-semibold mb-2">
               Ўсимликларни озиқлантириш воситалари
             </h3>
             <NavLink
               to="/catalog"
-              className="text-white font-medium hover:underline">
+              className="text-white xs:text-[13px] md:text-[16px] font-medium hover:underline">
               Каталогга ўтиш
             </NavLink>
           </div>
