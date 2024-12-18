@@ -63,7 +63,7 @@ const ProductDetails = () => {
           <table className="min-w-[600px] w-full text-white border-2 mx-2">
             <thead className="border-2 bg-green-800">
               <tr className="border-2">
-                <th className="border-2 px-2 py-1">Eski turi</th>
+                <th className="border-2 px-2 py-1">Ekin turi</th>
                 <th className="border-2 px-2 py-1">
                   Qaysi begona o'tlarga qarshi ishlatilinadi
                 </th>
