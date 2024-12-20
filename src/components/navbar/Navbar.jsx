@@ -108,13 +108,7 @@ const Navbar = () => {
                     Компания ҳақида
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink
-                    to="#"
-                    className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
-                    Стратегялар
-                  </NavLink>
-                </li>
+
                 <li>
                   <NavLink
                     to="#"
@@ -146,7 +140,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/catalog"
+                    to="/catalog2"
                     className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
                     Ўсимликларни озиқлантириш воситалар
                   </NavLink>
@@ -209,7 +203,7 @@ const Navbar = () => {
                   <NavLink
                     to="/journal"
                     className="block px-4 py-2 hover:bg-gray-500 rounded-lg">
-                    Агро журнали
+                    Журнал
                   </NavLink>
                 </li>
                 <li>

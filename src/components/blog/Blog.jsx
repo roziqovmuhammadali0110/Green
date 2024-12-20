@@ -36,7 +36,7 @@ const Blog = () => {
         </div>
 
         {/* Grid Layoutni konfiguratsiyangizga moslashtirish */}
-        <div className="grid w-full grid-cols-1 xs:grid-cols-1 justify-between sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-6 ">
+        {/* <div className="grid w-full grid-cols-1 xs:grid-cols-1 justify-between sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-6 ">
           <ProductCard
             icon={kaliyfos}
             title="ҒЎЗАНИ ЎҒИТЛАШ ДАСТУРИ"
@@ -61,7 +61,7 @@ const Blog = () => {
             date="12.08.2024"
             description="Тавсиф этиш хусусияти: Барча эксилардаги сўрувчи ва кемирувчи."
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ const News = () => {
           <div className="w-[450px] h-[130px] rounded-lg flex items-center justify-between gap-4 bg-slate-100">
             <div>
               <img
-                src="https://www.ifoda.uz/uploads/1/23G4jKkT2TVLgFL9hD3-4tJpNcEwYZD_.png"
+                src="https://static.zarnews.uz/crop/e/3/720__80_e397bcbf1e8f7e89c04456c806f63182.jpg?img=self&v=1588978744"
                 alt=""
                 className="h-[130px] rounded-l-lg w-[230px]"
               />

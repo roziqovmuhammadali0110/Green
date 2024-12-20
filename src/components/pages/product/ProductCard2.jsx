@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import agro from "../../../assets/img/agro.png";
+import agro from "../../../assets/img/greenPlus.jpg";
 import { NavLink } from "react-router-dom";
 
 import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
@@ -15,7 +15,7 @@ function ProductCard({ icon, title, description }) {
   return (
     <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 m-4 space-y-2">
       <div className="flex justify-center items-center mb-4">
-        <img src={icon} alt={title} className="h-[230px] w-[230px]" />
+        <img src={icon} alt={title} className="h-[230px] w-[260px]" />
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
       <p className="text-gray-700 text-start">{description}</p>
@@ -29,15 +29,15 @@ function ProductCard({ icon, title, description }) {
   );
 }
 
-function Catalog() {
+function Catalog2() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const products = [
     {
       icon: agro,
-      title: "Агро-Топшит",
+      title: "ГРЕЭН ПЛУС НПК",
       description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
+        "Қўлланиши: Иссиқхона ва очиқ далада ишлатиладиган макро ва микро элементларга бой минерал ўғитлар",
       category: "Гербицидлар"
     }
   ];
@@ -100,4 +100,4 @@ function Catalog() {
   );
 }
 
-export default Catalog;
+export default Catalog2;

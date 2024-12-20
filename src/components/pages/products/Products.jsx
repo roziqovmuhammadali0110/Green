@@ -6,7 +6,9 @@ import agroVertimaks from "../../../assets/img/Agro-Vertimeks.png";
 import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
 import qongiz from "../../../assets/img/Icons_GreenQongiz.png";
 import shudring from "../../../assets/img/Icons_GreenShudringli.png";
+import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
 import yer from "../../../assets/img/Icons_Green.png";
+import yer2 from "../../../assets/img/Icons_Green2.png";
 //import axios from "axios";
 
 const Products = () => {
@@ -86,7 +88,9 @@ const Products = () => {
           { title: "Гербицидлар", icon: shudring },
           { title: "Фунгицидлар", icon: gerbli },
           { title: "Инсектоакарацидлар", icon: qongiz },
-          { title: "Дефолиантлар", icon: yer }
+          { title: "Дефолиантлар", icon: yer },
+          { title: "Сирт фаол модда", icon: yer2 },
+          { title: "Уруғдорилагичлар", icon: yaproq }
         ].map((item, index) => (
           <div
             key={index}
