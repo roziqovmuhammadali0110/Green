@@ -10,6 +10,7 @@ import shudring from "../../../assets/img/Icons_GreenShudringli.png";
 import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
 import yer from "../../../assets/img/Icons_Green.png";
 import yer2 from "../../../assets/img/Icons_Green2.png";
+import green5 from "../../../assets/img/Icons_Green5.png";
 
 function ProductCard({ icon, title, description }) {
   return (
@@ -48,7 +49,8 @@ function Catalog2() {
     { title: "Инсектоакарацидлар", icon: qongiz },
     { title: "Дефолиантлар", icon: yer },
     { title: "Сирт фаол модда", icon: yer2 },
-    { title: "Уруғдорилагичлар", icon: yaproq }
+    { title: "Уруғдорилагичлар", icon: yaproq },
+    { title: "Ўсимликларни ўсишини бошқарувчи", icon: green5 }
   ];
 
   const filteredProducts = selectedCategory
@@ -68,7 +70,7 @@ function Catalog2() {
           {categories.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center bg-green-500 text-white p-4 w-32 rounded-md shadow-md cursor-pointer ${
+              className={`flex flex-col items-center bg-green-500 text-white p-4 w-36 rounded-md shadow-md cursor-pointer ${
                 selectedCategory === item.title ? "bg-green-700" : ""
               }`}
               onClick={() => setSelectedCategory(item.title)}>

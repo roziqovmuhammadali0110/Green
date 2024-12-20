@@ -128,32 +128,32 @@ const ProductDetails = ({ src, zoom = 3 }) => {
           <table className="min-w-[600px] w-full text-white border-2 mx-2">
             <thead className="border-2 bg-green-800">
               <tr className="border-2">
-                <th className="border-2 px-2 py-1">Ekin turi</th>
+                <th className="border-2 px-2 py-1">Экин тури</th>
                 <th className="border-2 px-2 py-1">
-                  Qaysi begona o'tlarga qarshi ishlatilinadi
+                  Қайси бегона ўтларга қарши ишлатилинади
                 </th>
-                <th className="border-2 px-2 py-1">Sarf meyori l/ga</th>
+                <th className="border-2 px-2 py-1">Сарф меёри л/га</th>
                 <th className="border-2 px-2 py-1">
-                  Ishlatish muddati, usuli va tavsiya etilgan cheklovlar
+                  Ишлатиш муддати, усули ва тавсия этилган чекловлар
                 </th>
                 <th className="border-2 px-2 py-1">
-                  Bir mavsumda ko'pi bilan necha marta ishlatiladi
+                  Бир мавсумда кўпи билан неча марта ишлатилади
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border-2 px-2 py-1">Sholi</td>
-                <td className="border-2 px-2 py-1">
-                  Bir yillik va ko'p yillik boshoqli, ikki pallali hamda keng
-                  bargli botqoq begona o'tlari
+                <td className="border-2 px-2 py-1 text-center">Шоли</td>
+                <td className="border-2 px-2 py-1 text-center">
+                  Бир йиллик ва кўп йиллик бошоқли, икки паллали ҳамда кенг
+                  баргли ботқоқ бегона ўтлари
                 </td>
-                <td className="border-2 px-2 py-1">2.0-3.0</td>
-                <td className="border-2 px-2 py-1">
-                  Begona o'tlarning 2-3 barg-tuplash davrida ham tuproqqa yoki
-                  sholipoyada suv sathi 5-10 sm bo'lganda purkaladi
+                <td className="border-2 px-2 py-1 text-center">2.0-3.0</td>
+                <td className="border-2 px-2 py-1 text-center">
+                  Бегона ўтларнинг 2-3 барг-туплаш даврида ҳам тупроққа ёки
+                  шолипояда сув сатҳи 5-10 см бўлганда пуркалади
                 </td>
-                <td className="border-2 px-2 py-1">1</td>
+                <td className="border-2 px-2 py-1 text-center">1</td>
               </tr>
             </tbody>
           </table>
