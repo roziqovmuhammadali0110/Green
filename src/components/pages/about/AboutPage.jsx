@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+
 import kompImg from "../../../assets/img/kompImg.jpg";
 import kompImg2 from "../../../assets/img/kompImg2.jpg";
+import kompImg3 from "../../../assets/img/Logo final-07.png";
 // Har bir tab uchun alohida komponentlar
 const Content1 = () => {
   return (
@@ -30,7 +32,7 @@ const Content1 = () => {
         бўлишга интилмоқдамиз.
       </div>
       <div className="flex items-center justify-center">
-        <img src={kompImg} alt="kompImg" />
+        <img src={kompImg3} alt="kompImg" className="w-[450px]" />
       </div>
       <div className="p-4 xs:p-1 md:p-4 xs:text-sm md:text-lg text-gray-700">
         <span className="font-bold xs:text-lg md:text-xl">
@@ -54,9 +56,8 @@ const Content1 = () => {
         қулайлик яратиш мақсадида маҳсулотларимизни Республиканинг турли
         ҳудудларига махсус дўкон ва омборхоналарига етказиб бераяпмиз.
       </div>
-
       <div className="flex items-center justify-center">
-        <img src={kompImg2} alt="kompImg2" />
+        <img src={kompImg} alt="kompImg" />
       </div>
       <div className="p-4 xs:p-1 md:p-4 xs:text-sm md:text-lg text-gray-700">
         <span className="font-bold xs:text-lg md:text-xl">
@@ -75,29 +76,16 @@ const Content1 = () => {
         тажрибалари ўтказилмоқда ва рўйхатга киритиш устида ишлар олиб
         борилмоқда.
       </div>
+      <div className="flex items-center justify-center">
+        <img src={kompImg2} alt="kompImg2" />
+      </div>
     </div>
-  );
-};
-
-const Content2 = () => {
-  return (
-    <div className="p-4 text-lg text-gray-700">Bu 2-tabning kontenti.</div>
-  );
-};
-
-const Content3 = () => {
-  return (
-    <div className="p-4 text-lg text-gray-700">Bu 3-tabning kontenti.</div>
   );
 };
 
 const AboutPage = () => {
   const [activeTab, setActiveTab] = useState(0); // Faol tabning indeksi
-  const tabs = [
-    { id: 0, label: "Биз ҳақимизда", content: <Content1 /> },
-    { id: 1, label: "Агрономлар", content: <Content2 /> },
-    { id: 2, label: "Сертификатлар", content: <Content3 /> }
-  ];
+  const tabs = [{ id: 0, label: null, content: <Content1 /> }];
   return (
     <section>
       <div className="mx-auto container px-[5%] py-10">

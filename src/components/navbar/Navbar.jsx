@@ -5,13 +5,13 @@ import logo from "../../assets/img/Logo final-07.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [mode, setMode] = useState(true);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="w-full bg-green-600">
+    <div className={`w-full bg-green-600`}>
       <div className="container mx-auto px-[5%] xs:pb-[3%] py-[1%]">
         {/* Header */}
         <div className="flex items-center justify-between p-1 mb-3">
