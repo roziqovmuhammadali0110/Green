@@ -4,13 +4,13 @@ import agro from "../../../assets/img/greenPlus.jpg";
 import { NavLink } from "react-router-dom";
 
 import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
-import nihol from "../../../assets/img/Icons_GreenNihol.png";
+// import nihol from "../../../assets/img/Icons_GreenNihol.png";
 import qongiz from "../../../assets/img/Icons_GreenQongiz.png";
 import shudring from "../../../assets/img/Icons_GreenShudringli.png";
-import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
-import yer from "../../../assets/img/Icons_Green.png";
-import yer2 from "../../../assets/img/Icons_Green2.png";
-import green5 from "../../../assets/img/Icons_Green5.png";
+// import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
+// import yer from "../../../assets/img/Icons_Green.png";
+// import yer2 from "../../../assets/img/Icons_Green2.png";
+// import green5 from "../../../assets/img/Icons_Green5.png";
 
 function ProductCard({ icon, title, description }) {
   return (
@@ -46,11 +46,7 @@ function Catalog2() {
   const categories = [
     { title: "Гербицидлар", icon: shudring },
     { title: "Фунгицидлар", icon: gerbli },
-    { title: "Инсектоакарацидлар", icon: qongiz },
-    { title: "Дефолиантлар", icon: yer },
-    { title: "Сирт фаол модда", icon: yer2 },
-    { title: "Уруғдорилагичлар", icon: yaproq },
-    { title: "Ўсимликларни ўсишини бошқарувчи препаратлар", icon: green5 }
+    { title: "Инсектоакарацидлар", icon: qongiz }
   ];
 
   const filteredProducts = selectedCategory
