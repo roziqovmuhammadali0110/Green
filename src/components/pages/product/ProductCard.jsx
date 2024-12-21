@@ -4,7 +4,6 @@ import agro from "../../../assets/img/agro.png";
 import { NavLink } from "react-router-dom";
 
 import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
-import nihol from "../../../assets/img/Icons_GreenNihol.png";
 import qongiz from "../../../assets/img/Icons_GreenQongiz.png";
 import shudring from "../../../assets/img/Icons_GreenShudringli.png";
 import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
@@ -50,7 +49,7 @@ function Catalog() {
     { title: "Дефолиантлар", icon: yer },
     { title: "Сирт фаол модда", icon: yer2 },
     { title: "Уруғдорилагичлар", icon: yaproq },
-    { title: "Ўсимликларни ўсишини бошқарувчи", icon: green5 }
+    { title: "Ўсимликларни ўсишини бошқарувчи препаратлар", icon: green5 }
   ];
 
   const filteredProducts = selectedCategory
