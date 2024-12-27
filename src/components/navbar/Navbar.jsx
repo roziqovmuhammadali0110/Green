@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div className={`w-full bg-green-600`}>
-      <div className="container mx-auto px-[5%] xs:pb-[3%] py-[1%]">
+      <div className="container mx-auto px-2 lg:px-10 xs:pb-[3%] py-[1%]">
         {/* Header */}
         <div className="flex items-center justify-between p-1 mb-3">
           {/* Logo and tagline */}
@@ -87,7 +87,7 @@ const Navbar = () => {
           className={`${
             isOpen ? "block" : "hidden"
           } md:block bg-green-600 md:bg-transparent`}>
-          <ul className="flex flex-col md:flex-row md:justify-between md:items-center text-[18px] font-normal gap-6 text-white">
+          <ul className="flex flex-col md:flex-row md:justify-between md:items-center text-[14px] lg:text-[18px] font-normal gap-6 text-white">
             <li className="relative group">
               <NavLink
                 to="/"
