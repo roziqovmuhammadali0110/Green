@@ -14,9 +14,9 @@ const journals = [
 ];
 const Magazine = () => {
   return (
-    <div>
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold mb-8 text-center">АГРОCОМ журнал</h2>
+    <div className="bg-white w-full py-5">
+      {/* <div className="container mx-auto px-4 py-8">
+        <h2 className="text-2xl font-bold mb-8 text-center">АГРОCОМ</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {journals.map((journal, index) => (
             <JournalCard
@@ -26,7 +26,7 @@ const Magazine = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

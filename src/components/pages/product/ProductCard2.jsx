@@ -4,6 +4,7 @@ import kalsiyCom from "../../../assets/img/kalsiyCom.jpg";
 import misCom from "../../../assets/img/misCom.jpg";
 import kaliyfos from "../../../assets/img/kaliyfos.jpg";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 function ProductCard({ icon, title, description }) {
   return (
@@ -22,6 +23,10 @@ function ProductCard({ icon, title, description }) {
   );
 }
 
+axios
+  .get("http://165.227.98.101/ProductOne")
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
 function Catalog2() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
