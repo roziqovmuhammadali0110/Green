@@ -118,7 +118,7 @@ const ProductDetails = ({ src, zoom = 3 }) => {
           <h1 className="text-xl lg:text-3xl font-bold">Тариф</h1>
           <h3 className="font-semibold text-[18px]">Қўлланилиши:</h3>
           <p className="text-sm lg:text-[16px] mb-4">
-            Галма, майсазорлар, беда ва шолини ўсиш даврида сув зоҳоти ва бошқа
+            Ғалла, майсазорлар, беда ва шолини ўсиш даврида сув зоҳоти ва бошқа
             бегона ўтларга қарши қўлланилади.
           </p>
         </div>
