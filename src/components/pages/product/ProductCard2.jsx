@@ -1,21 +1,42 @@
-import React, { useState } from "react";
-import agro from "../../../assets/img/greenPlus.jpg";
-import kalsiyCom from "../../../assets/img/kalsiyCom.jpg";
-import misCom from "../../../assets/img/misCom.jpg";
-import kaliyfos from "../../../assets/img/kaliyfos.jpg";
-import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function ProductCard({ icon, title, description }) {
+  const [showFullText, setShowFullText] = useState(false);
+
+  // Matn uzunligini aniqlash
+  const maxLength = 100; // Maksimal uzunlik
+  const isTextLong = description.length > maxLength;
+
+  // Ko'rsatiladigan matn
+  const displayText = showFullText
+    ? description
+    : description.slice(0, maxLength) + (isTextLong ? "..." : "");
   return (
-    <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
+    <div className="bg-white rounded-lg hover:shadow-3xl hover:shadow-blue-800 p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
       <div className="flex justify-center items-center mb-4">
-        <img src={icon} alt={title} className="h-[230px] w-[250px]" />
+        <img
+          src={icon}
+          alt={title}
+          className="h-[230px] w-[250px] object-cover"
+          onError={(e) => (e.target.src = "/default-image.jpg")} // Default rasm
+        />
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
-      <p className="text-gray-700 text-start">{description}</p>
+
+      <p className="text-gray-700 text-start text-[17px] font-medium">
+        {displayText}
+      </p>
+      {isTextLong && (
+        <button
+          className="text-blue-500 hover:underline font-medium"
+          onClick={() => setShowFullText(!showFullText)}>
+          {showFullText ? "Kamroq ko'rsatish" : "Ko'proq ko'rsatish"}
+        </button>
+      )}
       <NavLink to="/details">
-        <button className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
+        <button className="w-full bg-green-500 font-medium text-white py-[8px] text-[18px] rounded-lg hover:bg-green-600">
           Батафсил
         </button>
       </NavLink>
@@ -23,94 +44,72 @@ function ProductCard({ icon, title, description }) {
   );
 }
 
-axios
-  .get("http://165.227.98.101/ProductOne")
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
-function Catalog2() {
-  const [selectedCategory, setSelectedCategory] = useState("");
+const Catalog2 = () => {
+  const [data, setData] = useState([]);
+  const [language, setLanguage] = useState("uz");
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const products = {
-    суюқЎғитлар: [
-      {
-        icon: kalsiyCom,
-        title: "КальцийCом Спеcиал",
-        description:
-          "Таснифи: Органик азот, пептидлар ва аминокислоталарни ўз  ичига олган органик ўғит."
-      },
-      {
-        icon: misCom,
-        title: "Мис Cом (Cu 3%)",
-        description:
-          "Таснифи: Бактериал ва замбуруғли касалликларга қарши қўлланиладиган ўғит"
-      }
-    ],
-    кукунЎғитлар: [
-      {
-        icon: kaliyfos,
-        title: "КалийФос Cом 239",
-        description:
-          "Таснифи: Ўсимликларни гуллашини ўптималлаштиради. Мева сифатини (қанд миқдори, ранги, шакли, сақланишини) назорат қилади."
-      }
-    ],
-    қоришмаЎғитлар: [
-      {
-        icon: agro,
-        title: "Греэн Плус",
-        description:
-          "Таснифи: Белгиланган нисбатда барча ўсимликлар ва мевали дарахтларда хавфсиз ишлатиладиган мувозанатли ўғитдир."
-      }
-    ]
-  };
+  useEffect(() => {
+    axios
+      .get("http://165.227.98.101/ProductOne")
+      .then((res) => {
+        console.log(res.data); // Ma'lumotni konsolda tekshirish
 
-  const categories = [
-    { title: "Барча категориялар", key: "" },
+        setProducts(
+          res.data.map((product) => ({
+            ...product,
+            iconUrl: `http://165.227.98.101/${product.iconUrl}` // To'liq URL yaratish
+          }))
+        );
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
 
-    { title: "Суюқ ўғитлар", key: "суюқЎғитлар" },
-    { title: "Кукун ўғитлар", key: "кукунЎғитлар" },
-    { title: "Қоришма ўғитлар", key: "қоришмаЎғитлар" }
-  ];
-
-  const filteredProducts = selectedCategory
-    ? products[selectedCategory] || []
-    : Object.values(products).flat();
+  if (loading) {
+    return <p>Yuklanmoqda...</p>;
+  }
 
   return (
     <div className="bg-slate-100">
       <div className="container mx-auto flex items-center justify-center flex-col px-2 py-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold">Каталогимизда</h2>
-          <p className="text-lg text-gray-600">93+ турлари маҳсулотлар</p>
+          <h2 className="text-3xl font-bold">
+            {language === "uz" ? "Каталогимизда" : "В нашем каталоге"}
+          </h2>
         </div>
 
-        {/* Filter */}
         <div className="flex justify-center mt-6">
           <select
             className="p-3 rounded-lg border border-gray-300 text-gray-700 w-64"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}>
-            {categories.map((category, index) => (
-              <option key={index} value={category.key}>
-                {category.title}
-              </option>
-            ))}
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}>
+            <option value="uz">O'zbekcha</option>
+            <option value="ru">Русский</option>
           </select>
         </div>
 
-        {/* Products */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-          {filteredProducts.map((product, index) => (
+          {products.map((product) => (
             <ProductCard
-              key={index}
-              icon={product.icon}
-              title={product.title}
-              description={product.description}
+              key={product.id}
+              icon={product.iconUrl}
+              title={language === "uz" ? product.titleUz : product.titleRu}
+              description={
+                language === "uz"
+                  ? product.descriptionUz
+                  : product.descriptionRu
+              }
             />
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Catalog2;

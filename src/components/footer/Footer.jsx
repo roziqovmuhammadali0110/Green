@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className="footer w-full bg-green-600 text-white">
       <div className="container mx-auto pt-7 px-2 lg:px-10 py-[1%]">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-10 pt-10">
+        <div className="flex flex-wrap  items-start justify-between gap-10 pt-10">
           {/* Logo Section */}
           <div className="rounded-sm rounded-tr-[55px] rounded-bl-[30px] bg-white p-1 h-[70px] w-[210px]">
             <NavLink to="/" className="flex items-center justify-between gap-3">
