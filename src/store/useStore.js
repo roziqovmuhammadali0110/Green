@@ -9,6 +9,7 @@ const api = axios.create({
 const useStore = create((set) => ({
   productOne: [],
   productTwo: [],
+  newsS: [],
   loading: false,
   error: null,
 
@@ -34,6 +35,18 @@ const useStore = create((set) => ({
     try {
       const response = await api.get("/ProductTwo");
       set({ productTwo: response.data, loading: false });
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
+  },
+  fetchNewsS: async () => {
+    set({
+      loading: true,
+      error: null
+    });
+    try {
+      const response = await api.get("/New");
+      set({ newsS: response.data, loading: false });
     } catch (error) {
       set({ error: error.message, loading: false });
     }

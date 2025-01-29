@@ -51,6 +51,7 @@ function ProductCard({ id, icon, productPicture, title, description }) {
 
 const Catalog2 = () => {
   const { productTwo, loading, error, fetchProductTwo } = useStore(); // ✅ To‘g‘ri store ishlatilgan
+
   const [language, setLanguage] = useState("uz");
 
   useEffect(() => {

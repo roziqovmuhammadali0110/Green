@@ -1,52 +1,50 @@
-//import axios from "axios";
-import React from "react";
-
+import React, { useEffect } from "react";
+import useStore from "../../../store/useStore";
+import dayjs from "dayjs";
 const News = () => {
-  //   const data = {
-  //     username: "exampleUser", // Foydalanuvchi nomi
-  //     password: "examplePassword" // Parol
-  //   };
+  const { newsS, loading, error, fetchNewsS } = useStore();
 
-  //   // So'rovni yuborish
-  //   axios
-  //     .post("http://37.140.216.178/api/v1/users/login/", data)
-  //     .then((res) => {
-  //       console.log("Muvaffaqiyatli javob:", res.data); // Muvaffaqiyatli natija
-  //     })
-  //     .catch((err) => {
-  //       if (err.response) {
-  //         // Serverdan kelgan javob
-  //         console.error("Xatolik ma'lumoti:", err.response.data);
-  //         console.error("Status kodi:", err.response.status);
-  //       } else if (err.request) {
-  //         // So'rov yuborilgan, lekin javob olinmagan
-  //         console.error("So'rov yuborilgan, lekin javob yo'q:", err.request);
-  //       } else {
-  //         // So'rovni yuborishda muammo bo'lgan
-  //         console.error("Xatolik:", err.message);
-  //       }
-  //     });
+  useEffect(() => {
+    fetchNewsS(); // TO‘G‘RI chaqirish
+  }, [fetchNewsS]);
 
+  if (loading) {
+    return <p>Yuklanmoqda...</p>;
+  }
+  if (error) {
+    return <p>Xatolik: {error}</p>;
+  }
+
+  console.log(newsS);
   return (
     <section>
       <div className="px-[5%] container mx-auto font-medium py-10">
         <div>
-          <h1>Янгиликларни кузатиб боринг</h1>
+          <h1 className=" text-slate-700 text-[20px] py-5">
+            Янгиликларни кузатиб боринг
+          </h1>
         </div>
-        <div>
-          <div className="w-[450px] h-[130px] rounded-lg flex items-center justify-between gap-4 bg-slate-100">
-            <div>
-              <img
-                src="https://static.zarnews.uz/crop/e/3/720__80_e397bcbf1e8f7e89c04456c806f63182.jpg?img=self&v=1588978744"
-                alt=""
-                className="h-[130px] rounded-l-lg w-[230px]"
-              />
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-center">
+          {newsS.map((news) => (
+            <div
+              key={news.id}
+              className="max-w-[450px] h-[130px] rounded-lg flex items-center justify-between gap-4 bg-slate-100">
+              <div className="p-1">
+                <img
+                  src={news.newPicture}
+                  alt=""
+                  className="h-[120px] rounded-l-lg w-[230px]"
+                />
+              </div>
+              <div className="flex flex-col justify-center space-y-4 h-full w-full">
+                <h3 className="text-[#654848]">{news.titleUz}</h3>
+                <p className="text-green-500">
+                  {" "}
+                  {dayjs(news.date).format("DD.MM.YYYY")}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col justify-center space-y-4 h-full w-full">
-              <h3 className="text-[#654848]">Чегирмалар каталоги</h3>
-              <p className="text-green-500">04.09.2024</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
