@@ -10,10 +10,37 @@ const useStore = create((set) => ({
   productOne: [],
   productTwo: [],
   newsS: [],
+  selectedProduct: null, // Tanlangan mahsulotni saqlash
   loading: false,
   error: null,
 
   // API so'rovlari
+
+  // ✅ Mahsulotni ID orqali tanlab olish
+  setSelectedProduct: (id, type) => set({ selectedProduct: { id, type } }),
+
+  // ✅ ProductOne uchun batafsil ma’lumot olish
+  fetchProductOneDetails: async (id) => {
+    set({ loading: true, error: null });
+    try {
+      const response = await api.get(`/ProductOne/details/${id}`);
+      set({ selectedProduct: response.data, loading: false });
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
+  },
+
+  // ✅ ProductTwo uchun batafsil ma’lumot olish
+  fetchProductTwoDetails: async (id) => {
+    set({ loading: true, error: null });
+    try {
+      const response = await api.get(`/ProductTwo/details/${id}`);
+      set({ selectedProduct: response.data, loading: false });
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
+  },
+
   fetchProductOne: async () => {
     set({
       loading: true,
@@ -51,17 +78,6 @@ const useStore = create((set) => ({
       set({ error: error.message, loading: false });
     }
   }
-
-  // Agar kerak bo'lsa ProductDetails uchun metod
-  // fetchProductDetails: async () => {
-  //   set({ loading: true, error: null });
-  //   try {
-  //     const response = await axios.get("/ProductDetails");
-  //     set({ productDetails: response.data, loading: false });
-  //   } catch (error) {
-  //     set({ error: error.message, loading: false });
-  //   }
-  // },
 }));
 
 export default useStore;

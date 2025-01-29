@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useStore from "../../../store/useStore";
 
-function ProductCard({ icon, title, description }) {
+function ProductCard({ icon, title, description, type, id }) {
+  const navigate = useNavigate();
+  const { setSelectedProduct } = useStore();
+
+  const handleDetailsClick = () => {
+    setSelectedProduct(id, type); // ✅ ID va turini saqlaymiz
+    navigate(`/details/${type}/${id}`); // ✅ `type` ga qarab yo‘naltiramiz
+  };
+
   const [showFullText, setShowFullText] = useState(false);
   const maxLength = 100;
   const isTextLong = description.length > maxLength;
@@ -26,11 +34,12 @@ function ProductCard({ icon, title, description }) {
           {showFullText ? "Kamroq ko'rsatish" : "Ko'proq ko'rsatish"}
         </button>
       )}
-      <NavLink to="/details">
-        <button className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
-          Батафсил
-        </button>
-      </NavLink>
+
+      <button
+        onClick={handleDetailsClick}
+        className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
+        Батафсил
+      </button>
     </div>
   );
 }
@@ -102,9 +111,11 @@ function Catalog() {
           {filteredProducts.map((product, index) => (
             <ProductCard
               key={index}
+              id={product.id} // ✅ `id` ga qarab yo‘naltiramiz
               icon={product.productPicture}
               title={product.additionUz}
               description={product.descriptionUz}
+              type="productOne" // ✅ `productOne` deb turini yuboramiz
             />
           ))}
         </div>

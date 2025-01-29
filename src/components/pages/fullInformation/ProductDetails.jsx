@@ -1,24 +1,35 @@
 import React, { useRef, useEffect } from "react";
-import agroVertimaks from "../../../assets/img/agro.png";
+import useStore from "../../../store/useStore";
+import { useParams } from "react-router-dom";
 
-const ProductDetails = ({ src, zoom = 3 }) => {
-  const imgRef = useRef(null);
-  const glassRef = useRef(null);
+const ProductDetails = ({ zoom = 3 }) => {
+  const imgRef1 = useRef(null);
+  const glassRef1 = useRef(null);
+  const imgRef2 = useRef(null);
+  const glassRef2 = useRef(null);
+
   useEffect(() => {
     const magnify = () => {
-      const img = imgRef.current;
-      const glass = glassRef.current;
-      if (!img || !glass) return;
+      const img1 = imgRef1.current;
+      const glass1 = glassRef1.current;
+      const img2 = imgRef2.current;
+      const glass2 = glassRef2.current;
+      if (!img1 || !glass1 || !img2 || !glass2) return;
 
-      glass.style.backgroundImage = `url('${img.src}')`;
-      glass.style.backgroundRepeat = "no-repeat";
-      glass.style.backgroundSize = `${img.width * zoom}px ${
-        img.height * zoom
+      glass1.style.backgroundImage = `url('${img1.src}')`;
+      glass1.style.backgroundRepeat = "no-repeat";
+      glass1.style.backgroundSize = `${img1.width * zoom}px ${
+        img1.height * zoom
+      }px`;
+      glass2.style.backgroundImage = `url('${img2.src}')`;
+      glass2.style.backgroundRepeat = "no-repeat";
+      glass2.style.backgroundSize = `${img2.width * zoom}px ${
+        img2.height * zoom
       }px`;
 
       const bw = 3;
-      const w = glass.offsetWidth / 2;
-      const h = glass.offsetHeight / 2;
+      const w = glass1.offsetWidth / 2;
+      const h = glass1.offsetHeight / 2;
 
       const moveMagnifier = (e) => {
         e.preventDefault();
@@ -26,94 +37,187 @@ const ProductDetails = ({ src, zoom = 3 }) => {
         let x = pos.x;
         let y = pos.y;
 
-        if (x > img.width - w / zoom) x = img.width - w / zoom;
-        if (x < w / zoom) x = w / zoom;
-        if (y > img.height - h / zoom) y = img.height - h / zoom;
-        if (y < h / zoom) y = h / zoom;
+        // Restrict magnifier to image boundaries
+        x = Math.max(Math.min(x, img1.width - w / zoom), w / zoom);
+        y = Math.max(Math.min(y, img1.height - h / zoom), h / zoom);
 
-        glass.style.left = `${x - w}px`;
-        glass.style.top = `${y - h}px`;
-        glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${
+        glass1.style.left = `${x - w}px`;
+        glass1.style.top = `${y - h}px`;
+        glass1.style.backgroundPosition = `-${x * zoom - w + bw}px -${
+          y * zoom - h + bw
+        }px`;
+
+        glass2.style.left = `${x - w}px`;
+        glass2.style.top = `${y - h}px`;
+        glass2.style.backgroundPosition = `-${x * zoom - w + bw}px -${
           y * zoom - h + bw
         }px`;
       };
 
       const getCursorPos = (e) => {
-        const rect = img.getBoundingClientRect();
+        const rect = img1.getBoundingClientRect();
         const x = e.pageX - rect.left - window.pageXOffset;
         const y = e.pageY - rect.top - window.pageYOffset;
         return { x, y };
       };
 
-      img.addEventListener("mousemove", moveMagnifier);
-      glass.addEventListener("mousemove", moveMagnifier);
+      img1.addEventListener("mousemove", moveMagnifier);
+      glass1.addEventListener("mousemove", moveMagnifier);
+      img2.addEventListener("mousemove", moveMagnifier);
+      glass2.addEventListener("mousemove", moveMagnifier);
 
-      img.addEventListener("touchmove", moveMagnifier);
-      glass.addEventListener("touchmove", moveMagnifier);
+      img1.addEventListener("touchmove", moveMagnifier);
+      glass1.addEventListener("touchmove", moveMagnifier);
+      img2.addEventListener("touchmove", moveMagnifier);
+      glass2.addEventListener("touchmove", moveMagnifier);
     };
 
     magnify();
   }, [zoom]);
+
+  const {
+    selectedProduct,
+    fetchProductOneDetails,
+    fetchProductTwoDetails,
+    loading,
+    error
+  } = useStore();
+  const { type, id } = useParams();
+
+  useEffect(() => {
+    if (type === "productOne") {
+      fetchProductOneDetails(id);
+    } else if (type === "productTwo") {
+      fetchProductTwoDetails(id);
+    }
+  }, [type, id]);
+
+  if (loading) return <p>Yuklanmoqda...</p>;
+  if (error) return <p>Xatolik yuz berdi: {error}</p>;
+  if (!selectedProduct) return <p>Mahsulot topilmadi!</p>;
+
+  const isProductOne = type === "productOne" && selectedProduct;
+  const isProductTwo = type === "productTwo" && selectedProduct;
+
   return (
     <div className="flex flex-col lg:flex-row justify-center gap-10 w-full items-center p-6 py-10 bg-white shadow-lg rounded-md mx-auto">
-      {/* Dori rasmi */}
       <div className="bg-green-700 w-full lg:w-[100%] py-3 rounded-lg space-y-5">
-        <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
-          <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
-            <div
-              ref={glassRef}
-              className="absolute w-[180px] h-[180px] bg-white rounded-full border-2 shadow-lg cursor-none"
-              style={{ display: "none" }}></div>
-            <img
-              ref={imgRef}
-              src={agroVertimaks}
-              alt="Dori rasmi"
-              className="w-[300px] h-[350px] lg:w-[250px] lg:h-[300px] object-cover rounded-md"
-              onMouseEnter={() => {
-                const glass = glassRef.current;
-                if (glass) glass.style.display = "block";
-              }}
-              onMouseLeave={() => {
-                const glass = glassRef.current;
-                if (glass) glass.style.display = "none";
-              }}
-            />
-            <hr className="hidden lg:block border border-white h-[300px]" />
+        {isProductOne && (
+          <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
+            <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
+              <div
+                ref={glassRef1}
+                className="absolute w-[180px] h-[180px] bg-white rounded-full border-2 shadow-lg cursor-none"
+                style={{ display: "none" }}></div>
+              <img
+                ref={imgRef1}
+                src={selectedProduct.productOne.productPicture}
+                alt="Dori rasmi"
+                className="w-[300px] h-[350px] lg:w-[250px] lg:h-[300px] object-cover rounded-md"
+                onMouseEnter={() => {
+                  if (glassRef1.current)
+                    glassRef1.current.style.display = "block";
+                }}
+                onMouseLeave={() => {
+                  if (glassRef1.current)
+                    glassRef1.current.style.display = "none";
+                }}
+              />
+              <hr className="hidden lg:block border border-white h-[300px]" />
+            </div>
+
+            <div className="space-y-5 px-3 w-full lg:w-[60%] text-white">
+              <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">
+                {selectedProduct.productOne.titleUz}
+              </h2>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  {selectedProduct.productOne.descriptionUZ}
+                </span>
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  Таъсир этувчи модда:
+                </span>{" "}
+                {selectedProduct.productOne.sarfUz}
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  Кимёвий синфи:
+                </span>{" "}
+                Триазолпиримидинлар
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  Препарат шакли:
+                </span>{" "}
+                Мойли дисперсия
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">Қадоқ:</span> 1 л.
+              </p>
+            </div>
           </div>
+        )}
 
-          {/* Dori haqidagi to‘liq ma'lumotlar */}
-          <div className="space-y-5 px-3 w-full lg:w-[60%] text-white">
-            <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">
-              Агро-Топшит
-            </h2>
+        {isProductTwo && (
+          <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
+            <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
+              <div
+                ref={glassRef2}
+                className="absolute w-[180px] h-[180px] bg-white rounded-full border-2 shadow-lg cursor-none"
+                style={{ display: "none" }}></div>
+              <img
+                ref={imgRef2}
+                src={selectedProduct.productTwo.productPicture}
+                alt="Dori rasmi"
+                className="w-[300px] h-[350px] lg:w-[250px] lg:h-[300px] object-cover rounded-md"
+                onMouseEnter={() => {
+                  if (glassRef2.current)
+                    glassRef2.current.style.display = "block";
+                }}
+                onMouseLeave={() => {
+                  if (glassRef2.current)
+                    glassRef2.current.style.display = "none";
+                }}
+              />
+              <hr className="hidden lg:block border border-white h-[300px]" />
+            </div>
 
-            <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">
-                Шолида бир йиллик ва кўп йиллик бошоқли, икки паллали ҳамда кенг
-                баргли ботқоқ бегона ўтларга қарши гербицид.
-              </span>{" "}
-            </p>
-            <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">
-                Таъсир этувчи модда:
-              </span>{" "}
-              Цигалофон бутил + пеноксулан (cyhalofop-butyl + penoxsulam)
-            </p>
-            <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">Кимёвий синфи:</span>{" "}
-              Триазолпиримидинлар
-            </p>
-            <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">Препарат шакли:</span>{" "}
-              Мойли дисперсия
-            </p>
-            <p className="text-md lg:text-md mb-4">
-              <span className="font-semibold text-[16px]">Қадоқ:</span> 1 л.
-            </p>
+            <div className="space-y-5 px-3 w-full lg:w-[60%] text-white">
+              <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">
+                {selectedProduct.productTwo.titleUz}
+              </h2>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  {selectedProduct.productTwo.descriptionUZ}
+                </span>
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  Таъсир этувчи модда:
+                </span>{" "}
+                {selectedProduct.productTwo.sarfUz}
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  Кимёвий синфи:
+                </span>{" "}
+                Триазолпиримидинлар
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">
+                  Препарат шакли:
+                </span>{" "}
+                Мойли дисперсия
+              </p>
+              <p className="text-md lg:text-md mb-4">
+                <span className="font-semibold text-[16px]">Қадоқ:</span> 1 л.
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Tarifi va qo'shimcha ma'lumotlar */}
         <div className="w-full px-5 space-y-2 text-white">
           <h1 className="text-xl lg:text-3xl font-bold">Тариф</h1>
           <h3 className="font-semibold text-[18px]">Қўлланилиши:</h3>
@@ -123,7 +227,6 @@ const ProductDetails = ({ src, zoom = 3 }) => {
           </p>
         </div>
 
-        {/* Jadval */}
         <div className="overflow-x-auto pb-5">
           <table className="min-w-[600px] w-full text-white border-2 mx-2">
             <thead className="border-2 bg-green-800">
@@ -164,145 +267,3 @@ const ProductDetails = ({ src, zoom = 3 }) => {
 };
 
 export default ProductDetails;
-
-// import React, { useRef, useEffect, useState } from "react";
-// import axios from "axios";
-// import { useSelector } from "react-redux";
-
-// const ProductDetails = ({ zoom = 3 }) => {
-//   const selectedProduct = useSelector((state) => state.product.selectedProduct);
-
-//   const [productDetails, setProductDetails] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   const imgRef = useRef(null);
-//   const glassRef = useRef(null);
-
-//   useEffect(() => {
-//     if (selectedProduct) {
-//       axios
-//         .get(`http://139.59.255.5/ProductOne/details/${selectedProduct}`)
-//         .then((res) => {
-//           setProductDetails(res.data.productOne); // API javobidan mahsulot ma'lumotlari
-//           setLoading(false);
-//         })
-//         .catch((err) => {
-//           console.error("Xato:", err);
-//           setError("Ma'lumotlarni yuklashda xato yuz berdi");
-//           setLoading(false);
-//         });
-//     }
-//   }, [selectedProduct]);
-
-//   // Magnifier funksiyasi
-//   useEffect(() => {
-//     const magnify = () => {
-//       const img = imgRef.current;
-//       const glass = glassRef.current;
-//       if (!img || !glass) return;
-
-//       glass.style.backgroundImage = `url('${img.src}')`;
-//       glass.style.backgroundRepeat = "no-repeat";
-//       glass.style.backgroundSize = `${img.width * zoom}px ${
-//         img.height * zoom
-//       }px`;
-
-//       const bw = 3;
-//       const w = glass.offsetWidth / 2;
-//       const h = glass.offsetHeight / 2;
-
-//       const moveMagnifier = (e) => {
-//         e.preventDefault();
-//         const pos = getCursorPos(e);
-//         let x = pos.x;
-//         let y = pos.y;
-
-//         if (x > img.width - w / zoom) x = img.width - w / zoom;
-//         if (x < w / zoom) x = w / zoom;
-//         if (y > img.height - h / zoom) y = img.height - h / zoom;
-//         if (y < h / zoom) y = h / zoom;
-
-//         glass.style.left = `${x - w}px`;
-//         glass.style.top = `${y - h}px`;
-//         glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${
-//           y * zoom - h + bw
-//         }px`;
-//       };
-
-//       const getCursorPos = (e) => {
-//         const rect = img.getBoundingClientRect();
-//         const x = e.pageX - rect.left - window.pageXOffset;
-//         const y = e.pageY - rect.top - window.pageYOffset;
-//         return { x, y };
-//       };
-
-//       img.addEventListener("mousemove", moveMagnifier);
-//       glass.addEventListener("mousemove", moveMagnifier);
-
-//       img.addEventListener("touchmove", moveMagnifier);
-//       glass.addEventListener("touchmove", moveMagnifier);
-//     };
-
-//     magnify();
-//   }, [zoom]);
-
-//   if (!selectedProduct) {
-//     return <p>Mahsulot tanlanmagan</p>;
-//   }
-
-//   if (loading) {
-//     return <p>Yuklanmoqda...</p>;
-//   }
-
-//   if (error) {
-//     return <p>{error}</p>;
-//   }
-
-//   return (
-//     <div className="flex flex-col lg:flex-row justify-center gap-10 w-full items-center p-6 py-10 bg-white shadow-lg rounded-md mx-auto">
-//       {/* Dori rasmi */}
-//       <div className="bg-green-700 w-full lg:w-[100%] py-3 rounded-lg space-y-5">
-//         <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
-//           <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
-//             <div
-//               ref={glassRef}
-//               className="absolute w-[180px] h-[180px] bg-white rounded-full border-2 shadow-lg cursor-none"
-//               style={{ display: "none" }}></div>
-//             <img
-//               ref={imgRef}
-//               src={
-//                 productDetails?.productPicture
-//                   ? `http://139.59.255.5/${productDetails.productPicture}`
-//                   : "/default-image.jpg" // Standart rasm
-//               }
-//               alt="Dori rasmi"
-//               className="w-[300px] h-[350px] lg:w-[250px] lg:h-[300px] object-cover rounded-md"
-//               onMouseEnter={() => {
-//                 const glass = glassRef.current;
-//                 if (glass) glass.style.display = "block";
-//               }}
-//               onMouseLeave={() => {
-//                 const glass = glassRef.current;
-//                 if (glass) glass.style.display = "none";
-//               }}
-//             />
-//           </div>
-
-//           {/* Dori haqidagi to‘liq ma'lumotlar */}
-//           <div className="space-y-5 px-3 w-full lg:w-[60%] text-white">
-//             <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">
-//               {productDetails?.titleUz || "Mahsulot nomi"}
-//             </h2>
-//             <p className="text-md lg:text-md mb-4">
-//               {productDetails?.descriptionUz ||
-//                 "Mahsulot haqida ma'lumot mavjud emas."}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductDetails;
