@@ -1,26 +1,32 @@
-import React, { useState } from "react";
-
-import agro from "../../../assets/img/agro.png";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-
-import gerbli from "../../../assets/img/Icons_GreenGerbli.png";
-import qongiz from "../../../assets/img/Icons_GreenQongiz.png";
-import shudring from "../../../assets/img/Icons_GreenShudringli.png";
-import yaproq from "../../../assets/img/Icons_GreenYaproq.png";
-import yer from "../../../assets/img/Icons_Green.png";
-import yer2 from "../../../assets/img/Icons_Green2.png";
-import green5 from "../../../assets/img/Icons_Green5.png";
+import useStore from "../../../store/useStore";
 
 function ProductCard({ icon, title, description }) {
+  const [showFullText, setShowFullText] = useState(false);
+  const maxLength = 100;
+  const isTextLong = description.length > maxLength;
+  const displayText = showFullText
+    ? description
+    : description.slice(0, maxLength) + (isTextLong ? "..." : "");
+
   return (
     <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
       <div className="flex justify-center items-center mb-4">
         <img src={icon} alt={title} className="h-[230px] w-[230px]" />
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
-      <p className="text-gray-700 text-start">{description}</p>
+      <p className="text-gray-700 text-start text-[13px] font-medium">
+        {displayText}
+      </p>
+      {isTextLong && (
+        <button
+          className="text-blue-500 hover:underline font-medium"
+          onClick={() => setShowFullText(!showFullText)}>
+          {showFullText ? "Kamroq ko'rsatish" : "Ko'proq ko'rsatish"}
+        </button>
+      )}
       <NavLink to="/details">
-        {" "}
         <button className="w-full bg-green-500 font-medium text-white py-[6px] rounded-lg hover:bg-green-600">
           Батафсил
         </button>
@@ -30,79 +36,30 @@ function ProductCard({ icon, title, description }) {
 }
 
 function Catalog() {
+  const { productOne, loading, error, fetchProductOne } = useStore();
+
   const [selectedCategory, setSelectedCategory] = useState("");
-
-  const products = [
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    },
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    },
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    },
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    },
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    },
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    },
-    {
-      icon: agro,
-      title: "Агро-Топшит",
-      description:
-        "Қўлланиши: Галла, маккажўхори, беда ва шолининг фаол ўсув даврида.",
-      category: "Гербицидлар"
-    }
-  ];
-
-  const categories = [
-    { title: "Гербицидлар", icon: shudring },
-    { title: "Фунгицидлар", icon: gerbli },
-    { title: "Инсектоакарацидлар", icon: qongiz },
-    { title: "Дефолиантлар", icon: yer },
-    { title: "Сирт фаол модда", icon: yer2 },
-    { title: "Уруғдорилагичлар", icon: yaproq },
-    { title: "Ўсимликларни ўсишини бошқарувчи препаратлар", icon: green5 }
-  ];
-
-  const filteredProducts = selectedCategory
-    ? products.filter((product) => product.category === selectedCategory)
-    : products;
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    fetchProductOne();
+  }, []);
   const handleSelect = (category) => {
     setSelectedCategory(category.title);
     setIsOpen(false);
   };
+
+  const filteredProducts = selectedCategory
+    ? productOne.filter((product) => product.category === selectedCategory)
+    : productOne;
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Xatolik yuz berdi: {error}</div>;
+  }
 
   return (
     <div className="bg-slate-100">
@@ -117,22 +74,22 @@ function Catalog() {
             <div
               onClick={() => setIsOpen(!isOpen)}
               className="bg-green-700 font-medium text-white p-2 rounded cursor-pointer flex items-center justify-between">
-              <span>{selectedCategory || "Барча категориялар "}</span>
+              <span>{selectedCategory || "Барча категориялар"}</span>
               <span>▼</span>
             </div>
             {isOpen && (
               <div className="absolute z-10 bg-white shadow-lg mt-2 w-full rounded">
-                {categories.map((category, index) => (
+                {productOne.map((category, index) => (
                   <div
                     key={index}
                     className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
                     onClick={() => handleSelect(category)}>
                     <img
-                      src={category.icon}
-                      alt={category.title}
+                      src={category.productPicture}
+                      alt={category.additionUz}
                       className="w-6 h-6"
                     />
-                    <span className="font-medium">{category.title}</span>
+                    <span className="font-medium">{category.additionUz}</span>
                   </div>
                 ))}
               </div>
@@ -145,9 +102,9 @@ function Catalog() {
           {filteredProducts.map((product, index) => (
             <ProductCard
               key={index}
-              icon={product.icon}
-              title={product.title}
-              description={product.description}
+              icon={product.productPicture}
+              title={product.additionUz}
+              description={product.descriptionUz}
             />
           ))}
         </div>

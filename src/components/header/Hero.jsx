@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; // Slick uchun CSS
 import "slick-carousel/slick/slick-theme.css"; // Slick mavzusi uchun CSS
+import axios from "axios";
 
 const Hero = () => {
   const settings = {
@@ -13,6 +14,14 @@ const Hero = () => {
     // autoplaySpeed: 3000 // Avtomatik aylanish tezligi (ms)
   };
 
+  // axios
+  //   .get("http://152.42.231.76/New")
+  //   .then((response) => {
+  //     console.log(response.data[0].desUz);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   })
   return (
     <div className="w-full overflow-hidden">
       {" "}

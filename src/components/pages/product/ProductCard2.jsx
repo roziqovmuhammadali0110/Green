@@ -1,31 +1,36 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import useStore from "../../../store/useStore.js"; // ✅ To‘g‘ri import
 
-function ProductCard({ icon, title, description }) {
+function ProductCard({ id, icon, productPicture, title, description }) {
   const [showFullText, setShowFullText] = useState(false);
 
-  // Matn uzunligini aniqlash
-  const maxLength = 100; // Maksimal uzunlik
-  const isTextLong = description.length > maxLength;
+  const maxLength = 100;
+  const isTextLong = description ? description.length > maxLength : false;
+  const displayText = description
+    ? showFullText
+      ? description
+      : description.slice(0, maxLength) + (isTextLong ? "..." : "")
+    : "Tavsif mavjud emas";
 
-  // Ko'rsatiladigan matn
-  const displayText = showFullText
-    ? description
-    : description.slice(0, maxLength) + (isTextLong ? "..." : "");
   return (
     <div className="bg-white rounded-lg hover:shadow-3xl hover:shadow-blue-800 p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
-      <div className="flex justify-center items-center mb-4">
+      <div className="flex relative justify-center items-center mb-4">
         <img
           src={icon}
           alt={title}
-          className="h-[230px] w-[250px] object-cover"
-          onError={(e) => (e.target.src = "/default-image.jpg")} // Default rasm
+          className="w-[50px] absolute bg-white ` top-1 right-2 object-cover rounded-full"
+          onError={(e) => (e.target.src = "/default-image.jpg")}
+        />
+        <img
+          src={productPicture}
+          alt={title}
+          className="w-[280px] h-[280px] object-cover rounded-lg"
+          onError={(e) => (e.target.src = "/default-image.jpg")}
         />
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
-
-      <p className="text-gray-700 text-start text-[17px] font-medium">
+      <p className="text-gray-700 text-start text-[13px] font-medium">
         {displayText}
       </p>
       {isTextLong && (
@@ -45,29 +50,11 @@ function ProductCard({ icon, title, description }) {
 }
 
 const Catalog2 = () => {
-  const [data, setData] = useState([]);
+  const { productTwo, loading, error, fetchProductTwo } = useStore(); // ✅ To‘g‘ri store ishlatilgan
   const [language, setLanguage] = useState("uz");
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("http://165.227.98.101/ProductOne")
-      .then((res) => {
-        console.log(res.data); // Ma'lumotni konsolda tekshirish
-
-        setProducts(
-          res.data.map((product) => ({
-            ...product,
-            iconUrl: `http://165.227.98.101/${product.iconUrl}` // To'liq URL yaratish
-          }))
-        );
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
+    useStore.getState().fetchProductTwo(); // ✅ Cheksiz loopni oldini olish uchun
   }, []);
 
   if (loading) {
@@ -82,7 +69,6 @@ const Catalog2 = () => {
             {language === "uz" ? "Каталогимизда" : "В нашем каталоге"}
           </h2>
         </div>
-
         <div className="flex justify-center mt-6">
           <select
             className="p-3 rounded-lg border border-gray-300 text-gray-700 w-64"
@@ -92,20 +78,29 @@ const Catalog2 = () => {
             <option value="ru">Русский</option>
           </select>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              icon={product.iconUrl}
-              title={language === "uz" ? product.titleUz : product.titleRu}
-              description={
-                language === "uz"
-                  ? product.descriptionUz
-                  : product.descriptionRu
-              }
-            />
-          ))}
+          {Array.isArray(productTwo) && productTwo.length > 0 ? (
+            productTwo.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                icon={product.productIcon || "/default-icon.jpg"}
+                productPicture={product.productPicture || "/default-image.jpg"}
+                title={
+                  language === "uz" && product.titleUz
+                    ? product.titleUz
+                    : product.titleRu || "No Title"
+                }
+                description={
+                  language === "uz" && product.descriptionUz
+                    ? product.descriptionUz
+                    : product.descriptionRu || "No Description"
+                }
+              />
+            ))
+          ) : (
+            <p>Mahsulotlar topilmadi.</p>
+          )}
         </div>
       </div>
     </div>
