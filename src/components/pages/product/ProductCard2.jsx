@@ -22,7 +22,7 @@ function ProductCard({ id, icon, productPicture, title, description, type }) {
     : "Tavsif mavjud emas";
 
   return (
-    <div className="bg-white rounded-lg hover:shadow-3xl hover:shadow-blue-800 p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
+    <div className="bg-white transform transition duration-300 hover:scale-110 rounded-lg hover:shadow-3xl hover:shadow-blue-800 p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
       <div className="flex relative justify-center items-center mb-4">
         <img
           src={icon}

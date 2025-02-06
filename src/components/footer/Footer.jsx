@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
           {/* Address Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
-            <h3 className="font-medium text-green-500">Манзил</h3>
+            <h3 className="font-bold text-green-700">Манзил</h3>
             <p className="max-w-[300px]">
               Тошкент Шахар, Мирзо Улуғбек тумани, Сайрам МФЙ, Ясси кўчаси, 38
               уй
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
           {/* Contact Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
-            <h3 className="font-medium text-green-500">Алоқа</h3>
+            <h3 className="font-bold text-green-700">Алоқа</h3>
             <div className="flex items-center gap-3 font-medium text-white justify-center md:justify-start">
               <div className="flex-col flex">
                 <a
@@ -65,28 +65,30 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <a href="mailto:info@aag-group.uz" className="text-green-500">
+            <a
+              href="mailto:info@aag-group.uz"
+              className="text-green-500 hover:text-green-950 hover:font-bold">
               info@aag-group.uz
             </a>
           </div>
           {/* Social Media Section */}
           <div className="font-normal text-white space-y-2 text-center md:text-left">
-            <h3 className="font-medium text-green-500">
+            <h3 className="font-bold text-green-700">
               Бизни ижтимоий тармоқларда
             </h3>
             <div className="flex items-center justify-center md:justify-start gap-3">
               <a href="https://www.facebook.com/100090505449159/">
-                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
+                <div className="w-[35px] h-[35px] flex items-center justify-center hover:bg-green-900 p-1 rounded-md border border-slate-300">
                   <TbBrandFacebook />
                 </div>
               </a>
               <a href="https://www.instagram.com/agrocom_uz?igsh=OXRyOTA3YXo5enhq">
-                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
+                <div className="w-[35px] h-[35px] flex items-center justify-center hover:bg-green-900 p-1 rounded-md border border-slate-300">
                   <RxInstagramLogo />
                 </div>
               </a>
               <a href="https://t.me/agrocomguruh">
-                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 rounded-md border border-slate-300">
+                <div className="w-[35px] h-[35px] flex items-center justify-center p-1 hover:bg-green-950 rounded-md border border-slate-300">
                   <PiTelegramLogo />
                 </div>
               </a>
@@ -95,7 +97,7 @@ const Footer = () => {
             {/* Footer Button to Open Modal */}
             <button
               onClick={toggleModal} // Open modal when button is clicked
-              className="text-green-500 font-medium px-2 py-2 rounded-lg hover:text-green-600">
+              className="text-green-500 font-medium px-2 py-2 rounded-lg hover:text-green-900 hover:font-bold">
               КАЙТА АЛОКА УЧУН АРИЗА
             </button>
           </div>

@@ -19,9 +19,9 @@ function ProductCard({ icon, title, description, type, id }) {
     : description.slice(0, maxLength) + (isTextLong ? "..." : "");
 
   return (
-    <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
+    <div className="bg-white rounded-lg transform transition duration-300 hover:scale-110 shadow-lg hover:shadow-2xl p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
       <div className="flex justify-center items-center mb-4">
-        <img src={icon} alt={title} className="h-[230px] w-[230px]" />
+        <img src={icon} alt={title} className="h-[200px] w-[230px]" />
       </div>
       <h3 className="text-xl font-semibold text-start mb-2">{title}</h3>
       <p className="text-gray-700 text-start text-[13px] font-medium">
