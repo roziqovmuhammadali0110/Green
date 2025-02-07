@@ -111,17 +111,24 @@ const ProductDetails = () => {
             </thead>
             <tbody>
               <tr>
-                <td className="border-2 px-2 py-1 text-center">Шоли</td>
                 <td className="border-2 px-2 py-1 text-center">
-                  Бир йиллик ва кўп йиллик бошоқли, икки паллали ҳамда кенг
-                  баргли ботқоқ бегона ўтлари
+                  {productData2.ekinTuriUz ? productData2.ekinTuriUz : " "}
                 </td>
-                <td className="border-2 px-2 py-1 text-center">2.0-3.0</td>
                 <td className="border-2 px-2 py-1 text-center">
-                  Бегона ўтларнинг 2-3 барг-туплаш даврида ҳам тупроққа ёки
-                  шолипояда сув сатҳи 5-10 см бўлганда пуркалади
+                  {productData2.begonaQarshiUz
+                    ? productData2.begonaQarshiUz
+                    : " "}
                 </td>
-                <td className="border-2 px-2 py-1 text-center">1</td>
+                <td className="border-2 px-2 py-1 text-center">
+                  {productData2.sarfMeyoriUz ? productData2.sarfMeyoriUz : " "}
+                </td>
+                <td className="border-2 px-2 py-1 text-center">
+                  {productData2.ekinTuriUz ? productData2.ekinTuriUz : " "}
+                </td>
+                <td className="border-2 px-2 py-1 text-center">
+                  {" "}
+                  {productData2.onlsum ? productData2.onlsum : " "}
+                </td>
               </tr>
             </tbody>
           </table>
