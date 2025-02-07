@@ -80,13 +80,13 @@ const Catalog2 = () => {
           </h2>
         </div>
         <div className="flex justify-center mt-6">
-          <select
+          {/* <select
             className="p-3 rounded-lg border border-gray-300 text-gray-700 w-64"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}>
             <option value="uz">O'zbekcha</option>
             <option value="ru">Русский</option>
-          </select>
+          </select> */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
           {Array.isArray(productTwo) && productTwo.length > 0 ? (
