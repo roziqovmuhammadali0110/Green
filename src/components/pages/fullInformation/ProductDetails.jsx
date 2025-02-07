@@ -107,28 +107,44 @@ const ProductDetails = () => {
                 <th className="border-2 px-2 py-1">
                   Бир мавсумда кўпи билан неча марта ишлатилади
                 </th>
+
+                {productData2.map((product) => (
+                  <th
+                    key={product.id}
+                    className="border-2 px-2 py-1 text-center">
+                    {product.nameUz}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td className="border-2 px-2 py-1 text-center">
-                  {productData2.ekinTuriUz ? productData2.ekinTuriUz : " "}
+                  {productData2.ekinTuriUz ? productData2.ekinTuriUz : null}
                 </td>
                 <td className="border-2 px-2 py-1 text-center">
                   {productData2.begonaQarshiUz
                     ? productData2.begonaQarshiUz
-                    : " "}
+                    : null}
                 </td>
                 <td className="border-2 px-2 py-1 text-center">
-                  {productData2.sarfMeyoriUz ? productData2.sarfMeyoriUz : " "}
+                  {productData2.sarfMeyoriUz ? productData2.sarfMeyoriUz : null}
                 </td>
                 <td className="border-2 px-2 py-1 text-center">
-                  {productData2.ekinTuriUz ? productData2.ekinTuriUz : " "}
+                  {productData2.ekinTuriUz ? productData2.ekinTuriUz : null}
                 </td>
                 <td className="border-2 px-2 py-1 text-center">
                   {" "}
-                  {productData2.onlsum ? productData2.onlsum : " "}
+                  {productData2.onlsum ? productData2.onlsum : null}
                 </td>
+
+                {productData2.map((product) => (
+                  <td
+                    key={product.id}
+                    className="border-2 px-2 py-1 text-center">
+                    {product.foiz}
+                  </td>
+                ))}
               </tr>
             </tbody>
           </table>
