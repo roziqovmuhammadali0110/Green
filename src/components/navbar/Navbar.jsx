@@ -45,31 +45,31 @@ const Navbar = () => {
           {/* Contact and Language */}
           <div className="hidden md:flex items-center gap-7">
             <div className="flex items-center gap-3 font-medium text-white">
-              <FiPhone />
+              {/* <FiPhone /> */}
               <div className="flex-col flex">
                 <a
                   href="tel:+998998510018"
                   className="text-white hover:underline">
-                  +998 99 851 00 18
+                  📞: +998 99 851 00 18
                 </a>
                 <a
                   href="tel:+998998210018"
                   className="text-white hover:underline">
-                  +998 99 821 00 18
+                  📞: +998 99 821 00 18
                 </a>
                 <a
                   href="tel:+998772997700"
                   className="text-white hover:underline">
-                  +998 77 299 77 00
+                  📞: +998 77 299 77 00
                 </a>
               </div>
             </div>
-            <select
+            {/* <select
               className="w-[100px] bg-white text-green-800 p-2 rounded-lg font-medium"
               defaultValue="Uzb">
               <option value="Uzb">Uzb</option>
               <option value="Rus">Rus</option>
-            </select>
+            </select> */}
           </div>
 
           {/* Hamburger Menu */}
