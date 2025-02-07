@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Products from "../pages/products/Products";
 import agro from "../../assets/img/agro.png";
+import useStore from "../../store/useStore";
+import { useEffect } from "react";
 
 // ProductCard komponenti
 const ProductCard = () => {
@@ -43,6 +45,26 @@ const ProductCard = () => {
 };
 
 function LazyLoad() {
+  const {
+    productOne,
+    productTwo,
+    loading,
+    error,
+    fetchProductOne,
+    fetchProductTwo
+  } = useStore();
+  useEffect(() => {
+    fetchProductOne();
+    fetchProductTwo();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>error...🤷‍♂️</div>;
+  }
+
   const settings = {
     dots: true,
     lazyLoad: "ondemand", // Lazy loadni o‘zgartirdim

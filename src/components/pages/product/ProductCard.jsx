@@ -58,20 +58,20 @@ function ProductCard({ icon, productPicture, title, description, type, id }) {
 function Catalog() {
   const { productOne, loading, error, fetchProductOne } = useStore();
 
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  // const [selectedCategory, setSelectedCategory] = useState("");
+  // const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     fetchProductOne();
   }, []);
-  const handleSelect = (category) => {
-    setSelectedCategory(category.title);
-    setIsOpen(false);
-  };
+  // const handleSelect = (category) => {
+  //   setSelectedCategory(category.title);
+  //   setIsOpen(false);
+  // };
 
-  const filteredProducts = selectedCategory
-    ? productOne.filter((product) => product.category === selectedCategory)
-    : productOne;
+  // const filteredProducts = selectedCategory
+  //   ? productOne.filter((product) => product.category === selectedCategory)
+  //   : productOne;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -90,7 +90,7 @@ function Catalog() {
             <p className="text-lg text-gray-600">93+ турлари маҳсулотлар</p>
           </div>
 
-          <div className="relative w-64 rounded-xl bg-slate-600">
+          {/* <div className="relative w-64 rounded-xl bg-slate-600">
             <div
               onClick={() => setIsOpen(!isOpen)}
               className="bg-green-700 font-medium text-white p-2 rounded cursor-pointer flex items-center justify-between">
@@ -114,12 +114,12 @@ function Catalog() {
                 ))}
               </div>
             )}
-          </div>
+          </div>  */}
         </div>
 
         {/* Mahsulotlar */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-          {filteredProducts.map((product, index) => (
+          {productOne.map((product, index) => (
             <ProductCard
               key={index}
               id={product.id} // ✅ `id` ga qarab yo‘naltiramiz
