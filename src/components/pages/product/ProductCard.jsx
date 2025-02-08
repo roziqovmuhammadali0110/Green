@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useStore from "../../../store/useStore";
+//import LetterGlitch from "../../../LetterGlitch";
+import Orb from "../../../Orb";
 
 function ProductCard({ icon, productPicture, title, description, type, id }) {
   const navigate = useNavigate();
@@ -74,7 +76,25 @@ function Catalog() {
   //   : productOne;
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      // <div>
+      //   <LetterGlitch
+      //     glitchSpeed={50}
+      //     centerVignette={true}
+      //     outerVignette={true}
+      //     smooth={true}
+      //   />
+      //   ;
+      //</div>
+      <div style={{ width: "100%", height: "600px", position: "relative" }}>
+        <Orb
+          hoverIntensity={0.8}
+          rotateOnHover={true}
+          hue={7}
+          forceHoverState={true}
+        />
+      </div>
+    );
   }
 
   if (error) {

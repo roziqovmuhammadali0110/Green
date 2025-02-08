@@ -17,7 +17,7 @@ function App() {
   const containerRef = useRef(null);
   return (
     <div ref={containerRef}>
-      <Crosshair containerRef={containerRef} color="#ffffff" />
+      {/* <Crosshair containerRef={containerRef} color="#ffffff" /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
