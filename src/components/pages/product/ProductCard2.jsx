@@ -24,12 +24,12 @@ function ProductCard({ id, icon, productPicture, title, description, type }) {
   return (
     <div className="bg-white transform transition duration-300 hover:scale-110 rounded-lg hover:shadow-3xl hover:shadow-blue-800 p-4 w-full sm:w-60 md:w-72 lg:w-80 space-y-2">
       <div className="flex relative justify-center items-center mb-4">
-        <img
+        {/* <img
           src={icon}
           alt={title}
           className="w-[50px] absolute bg-white ` top-1 right-2 object-cover rounded-full"
           onError={(e) => (e.target.src = "/default-image.jpg")}
-        />
+        /> */}
         <img
           src={productPicture}
           alt={title}

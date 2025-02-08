@@ -38,6 +38,9 @@ const News = () => {
               </div>
               <div className="flex flex-col justify-center space-y-4 h-full w-full">
                 <h3 className="text-[#654848]">{news.titleUz}</h3>
+                <p className="text-slate-700 text-[13px]">
+                  {news.describtionUz}
+                </p>
                 <p className="text-green-500">
                   {" "}
                   {dayjs(news.date).format("DD.MM.YYYY")}

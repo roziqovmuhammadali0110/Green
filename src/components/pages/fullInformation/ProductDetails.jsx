@@ -34,7 +34,7 @@ const ProductDetails = () => {
         <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
           <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
             <div className="relative">
-              <img
+              {/* <img
                 className="absolute w-14 bg-white rounded-3xl right-0"
                 src={
                   productData?.iconUrl
@@ -42,7 +42,7 @@ const ProductDetails = () => {
                     : productData.productIcon
                 }
                 alt=""
-              />
+              /> */}
               <img
                 src={productData?.productPicture}
                 alt="Dori rasmi"

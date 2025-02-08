@@ -11,13 +11,11 @@ import Magazine from "./components/magazine/Magazine";
 import ProductDetails from "./components/pages/fullInformation/ProductDetails";
 import Catalog2 from "./components/pages/product/ProductCard2";
 import { useRef } from "react";
-import Crosshair from "./Crosshair";
 
 function App() {
   const containerRef = useRef(null);
   return (
-    <div ref={containerRef}>
-      {/* <Crosshair containerRef={containerRef} color="#ffffff" /> */}
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -32,7 +30,7 @@ function App() {
         <Route path="/details/:type/:id" element={<ProductDetails />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 

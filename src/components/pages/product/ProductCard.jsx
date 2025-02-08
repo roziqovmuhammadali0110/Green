@@ -87,12 +87,12 @@ function Catalog() {
       //   ;
       //</div>
       <div style={{ width: "100%", height: "600px", position: "relative" }}>
-        <Orb
+        {/* <Orb
           hoverIntensity={0.8}
           rotateOnHover={true}
           hue={7}
           forceHoverState={true}
-        />
+        /> */}
       </div>
     );
   }
@@ -145,7 +145,7 @@ function Catalog() {
               id={product.id} // ✅ `id` ga qarab yo‘naltiramiz
               icon={product.iconUrl || "/default-icon.jpg"}
               productPicture={product.productPicture || "/default-image.jpg"}
-              title={product.additionUz}
+              title={product.titleUz}
               description={product.descriptionUz}
               type="productOne" // ✅ `productOne` deb turini yuboramiz
             />
