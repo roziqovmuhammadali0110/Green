@@ -26,17 +26,29 @@ const ProductDetails = () => {
       : selectedProduct?.tableTwo || [];
 
   if (!productData) return <p>Ma'lumot mavjud emas!</p>;
+  console.log(productData);
 
   return (
     <div className="flex flex-col lg:flex-row justify-center gap-10 w-full items-center p-6 py-10 bg-white shadow-lg rounded-md mx-auto">
       <div className="bg-green-700 w-full lg:w-[100%] py-3 rounded-lg space-y-5">
         <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
           <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
-            <img
-              src={productData?.productPicture}
-              alt="Dori rasmi"
-              className="w-[300px] h-[350px] lg:w-[250px] lg:h-[300px] object-cover rounded-md"
-            />
+            <div className="relative">
+              <img
+                className="absolute w-14 bg-white rounded-3xl right-0"
+                src={
+                  productData?.iconUrl
+                    ? productData.iconUrl
+                    : productData.productIcon
+                }
+                alt=""
+              />
+              <img
+                src={productData?.productPicture}
+                alt="Dori rasmi"
+                className="w-[300px] h-[350px] lg:w-[250px] lg:h-[300px] object-cover rounded-md"
+              />
+            </div>
             <hr className="hidden lg:block border border-white h-[300px]" />
           </div>
           <div className="space-y-5 px-3 w-full lg:w-[60%] text-white">

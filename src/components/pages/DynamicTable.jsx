@@ -7,7 +7,9 @@ const DynamicTable = ({ data }) => {
 
   // Ustun nomlarini olish
   const headers = Object.keys(data[0]).filter(
-    (key) => key.endsWith("Uz") || (!key.endsWith("Ru") && key !== "id")
+    (key) =>
+      key.endsWith("Uz") ||
+      (!key.endsWith("Ru") && key !== "id" && !key.endsWith("Id"))
   );
 
   return (
