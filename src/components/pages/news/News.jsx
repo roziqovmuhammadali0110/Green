@@ -18,7 +18,6 @@ const News = () => {
     return <p>Xatolik: {error}</p>;
   }
 
-  console.log(newsS);
   return (
     <section>
       <div className="px-[5%] container mx-auto font-medium py-10">
@@ -31,7 +30,7 @@ const News = () => {
           {newsS.map((news) => (
             <div
               key={news.id}
-              className="max-w-[450px] h-[170px] rounded-lg flex items-center justify-between gap-4 bg-slate-100">
+              className="max-w-[450px] md:h-[170px] p-5 md:py-0 rounded-lg flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-100">
               <div className="p-1">
                 <img
                   src={news.newPicture}
@@ -42,7 +41,9 @@ const News = () => {
               <div className="flex flex-col justify-center space-y-[2px] h-full w-full">
                 <h3 className="text-[#654848]">{news.titleUz}</h3>
                 <p className="text-slate-700 text-[13px]">
-                  {news.describtionUz}
+                  {news.describtionUz.length > 40
+                    ? news.describtionUz.slice(0, 40) + "..."
+                    : news.describtionUz}
                 </p>
                 <p className="text-green-500">
                   {dayjs(news.date).format("DD.MM.YYYY")}
