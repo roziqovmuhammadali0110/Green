@@ -14,7 +14,7 @@ function ProductCard({ icon, productPicture, title, description, type, id }) {
   };
 
   const [showFullText, setShowFullText] = useState(false);
-  const maxLength = 100;
+  const maxLength = 60;
   const isTextLong = description.length > maxLength;
   const displayText = showFullText
     ? description
@@ -42,7 +42,7 @@ function ProductCard({ icon, productPicture, title, description, type, id }) {
       </p>
       {isTextLong && (
         <button
-          className="text-blue-500 hover:underline font-medium"
+          className="text-blue-500 hover:underline font-medium text-[13px]"
           onClick={() => setShowFullText(!showFullText)}>
           {showFullText ? "Kamroq ko'rsatish" : "Ko'proq ko'rsatish"}
         </button>

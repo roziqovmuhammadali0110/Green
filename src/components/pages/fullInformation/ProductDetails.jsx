@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import useStore from "../../../store/useStore";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DynamicTable from "../DynamicTable";
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const { selectedProduct, fetchProductDetails, loading, error } = useStore();
   const { type, id } = useParams();
 
@@ -26,11 +27,15 @@ const ProductDetails = () => {
       : selectedProduct?.tableTwo || [];
 
   if (!productData) return <p>Ma'lumot mavjud emas!</p>;
-  console.log(productData);
 
   return (
     <div className="flex flex-col lg:flex-row justify-center gap-10 w-full items-center p-6 py-10 bg-white shadow-lg rounded-md mx-auto">
       <div className="bg-green-700 w-full lg:w-[100%] py-3 rounded-lg space-y-5">
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-4 px-4 py-2 bg-red-800 text-white rounded-md hover:bg-blue-700 transition">
+          Орқага
+        </button>
         <div className="flex flex-col lg:flex-row items-center justify-evenly p-5 rounded-lg">
           <div className="relative flex items-center justify-evenly w-full lg:w-[40%]">
             <div className="relative">
